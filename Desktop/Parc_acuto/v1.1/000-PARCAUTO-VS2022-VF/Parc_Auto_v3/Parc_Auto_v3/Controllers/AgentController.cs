@@ -123,6 +123,7 @@ namespace Parc_Auto_v3.Controllers
  
             var model = new List<DemandeViewModel>();
 
+
             foreach (var demande in filteredDemandes)
             {
                 var previousDemande = await _context.Demandes
@@ -165,9 +166,15 @@ namespace Parc_Auto_v3.Controllers
         public async Task<IActionResult> Search(string searchString)
         {
             var demandes = await _demandesService.GetAllDemandesAsync();
+            /*   var filteredDemandes = demandes
+                   .Where(d => d.Kilometrage == null && d.Voiture != null)
+                   .ToList();
+            */
             var filteredDemandes = demandes
-                .Where(d => d.Kilometrage == null && d.Voiture != null)
-                .ToList();
+                  .Where(d => d.Kilometrage == null && d.Voiture != null)
+                  .OrderByDescending(d => d.Id)
+                  .ToList();
+
 
             if (!string.IsNullOrEmpty(searchString))
             {

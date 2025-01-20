@@ -8,9 +8,9 @@
         
             <th>Date</th>
             <th>Voiture Matricule</th>
-            <th>Last Kilométrage</th>
-            <th>New Kilométrage</th>
-            <th>Actions</th>
+            <th>Last KM</th>
+            <th>New KM</th>
+         
         </tr>
     </thead>
     <tbody>
@@ -22,15 +22,35 @@
           
                 <td>@item.Demande.DateDepart</td>
                 <td>@item.Demande.Voiture?.Matricule</td>
-                <td>@item.LastKilometrage</td>
+                <td>@item.LastKilometrage  &lt; </td>
                 <td>
-                    <form asp-action="UpdateDemande" method="post" class="form-inline">
+                    <form asp-action="UpdateDemande" method="post" class="form-inline" onsubmit="return validateKilometrage(@item.LastKilometrage, this)">
                         <input type="hidden" name="id" value="@item.Demande.Id" />
-                        <input type="number" name="newKilometrage" class="form-control" required />
-                        <button type="submit" class="btn btn-primary btn-custom">Update</button>
-                    </form>
+                        <div class="input-group">
+                            <input type="number" name="newKilometrage" class="form-control" required />
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary btn-custom">Update</button>
+                            </div>
+                        </div>
+                        <div class="error-message text-danger mt-2" style="display: none;"></div>
+                    </form> 
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+
+<script>
+    function validateKilometrage(lastKilometrage, form) {
+         var newKilometrage = form.newKilometrage.value;
+         var errorMessage = form.querySelector('.error-message');
+         if (parseInt(newKilometrage) <= parseInt(lastKilometrage)) {
+             errorMessage.textContent = "New KM must be greater than Last KM.";
+             errorMessage.style.display = 'block';
+             return false;
+         }
+         errorMessage.style.display = 'none';
+         return true;
+     }
+</script>
