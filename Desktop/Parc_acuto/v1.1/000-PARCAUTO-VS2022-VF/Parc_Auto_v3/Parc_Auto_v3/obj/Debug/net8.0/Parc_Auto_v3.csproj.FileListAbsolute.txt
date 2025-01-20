@@ -907,3 +907,4 @@ C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_A
 C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_Auto_v3\obj\Debug\net8.0\Parc_Auto_v3.pdb
 C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_Auto_v3\obj\Debug\net8.0\Parc_Auto_v3.genruntimeconfig.cache
 C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_Auto_v3\obj\Debug\net8.0\ref\Parc_Auto_v3.dll
+C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_Auto_v3\obj\Debug\net8.0\Parc_Auto_v3.sourcelink.json

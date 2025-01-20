@@ -121,6 +121,8 @@
                 <a asp-action="Create" asp-controller="Sinistre" asp-route-voitureId="@Model.Id" class="btn btn-info btn-info-custom btn-custom">
                     Créer un sinistre
                 </a>
+           
+            
             </div>
         </div>
 
@@ -217,6 +219,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>Nom Prenom</th>
                             <th>Date</th>
                             <th>Kilometrage</th>
                             <th>Destination</th>
@@ -228,6 +231,7 @@
                             foreach (var demande in ViewBag.Demandes as List<Parc_Auto_v3.Models.Demandes>)
                             {
                                 <tr>
+                                    <td>@demande.Nom @demande.Prenom</td>
                                     <td>@demande.DateDepart.ToString("yyyy-MM-dd")</td>
                                     <td>@demande.Kilometrage</td>
                                     <td>@demande.Destination</td>

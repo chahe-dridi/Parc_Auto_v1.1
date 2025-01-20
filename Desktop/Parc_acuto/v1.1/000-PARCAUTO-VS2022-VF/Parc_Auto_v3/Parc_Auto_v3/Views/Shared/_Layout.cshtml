@@ -98,13 +98,13 @@
                            
 
 
-                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "utilisateur"))
+                        /*    @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "utilisateur"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
                                 </li>
                             }
-
+                            */
                             @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "agent") || await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "superadmin"))
                             {
                                 <li class="nav-item">

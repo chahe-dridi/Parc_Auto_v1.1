@@ -110,10 +110,17 @@ namespace Parc_Auto_v3.Controllers
         {
             var demandes = await _demandesService.GetAllDemandesAsync();
             // Filter demandes to include only those without kilometrage and with a reserved voiture
+            /*   var filteredDemandes = demandes
+                   .Where(d => d.Kilometrage == null && d.Voiture != null && d.Voiture.Disponibilite == "Reserved")
+                   .ToList();
+   */
+            // in here change the filterdemande so it show the voitures without checking its diponibiltiy but keep the other things 
             var filteredDemandes = demandes
-                .Where(d => d.Kilometrage == null && d.Voiture != null && d.Voiture.Disponibilite == "Reserved")
-                .ToList();
+           .Where(d => d.Kilometrage == null && d.Voiture != null)
+           .ToList();
 
+
+ 
             var model = new List<DemandeViewModel>();
 
             foreach (var demande in filteredDemandes)
@@ -131,7 +138,71 @@ namespace Parc_Auto_v3.Controllers
             }
 
             return View(model);
+
+
+            /* var model = new List<DemandeViewModel>();
+
+             foreach (var demande in filteredDemandes)
+             {
+                 var previousDemande = await _context.Demandes
+                     .Where(d => d.VoitureId == demande.VoitureId && d.Id < demande.Id)
+                     .OrderByDescending(d => d.Id)
+                     .FirstOrDefaultAsync();
+
+                 model.Add(new DemandeViewModel
+                 {
+                     Demande = demande,
+                     LastKilometrage = previousDemande?.Kilometrage
+                 });
+             }
+
+             return View(model);*/
         }
+
+
+        // GET: Agent/Search
+        [HttpGet]
+        public async Task<IActionResult> Search(string searchString)
+        {
+            var demandes = await _demandesService.GetAllDemandesAsync();
+            var filteredDemandes = demandes
+                .Where(d => d.Kilometrage == null && d.Voiture != null)
+                .ToList();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                filteredDemandes = filteredDemandes
+                    .Where(d => d.Voiture.Matricule.Contains(searchString))
+                    .ToList();
+            }
+
+            var model = new List<DemandeViewModel>();
+
+            foreach (var demande in filteredDemandes)
+            {
+                var previousDemande = await _context.Demandes
+                    .Where(d => d.VoitureId == demande.VoitureId && d.Id < demande.Id)
+                    .OrderByDescending(d => d.Id)
+                    .FirstOrDefaultAsync();
+
+                model.Add(new DemandeViewModel
+                {
+                    Demande = demande,
+                    LastKilometrage = previousDemande?.Kilometrage
+                });
+            }
+
+            return PartialView("_DemandeListPartial", model);
+        }
+
+
+
+
+
+
+
+
+
 
         // POST: Agent/UpdateDemande
         [HttpPost]
