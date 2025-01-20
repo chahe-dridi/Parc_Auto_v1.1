@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parc_Auto_v3", "Parc_Auto_v3\Parc_Auto_v3.csproj", "{C3250075-C430-4DE0-BB90-5DD9B4A99626}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3250075-C430-4DE0-BB90-5DD9B4A99626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3250075-C430-4DE0-BB90-5DD9B4A99626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3250075-C430-4DE0-BB90-5DD9B4A99626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3250075-C430-4DE0-BB90-5DD9B4A99626}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3ADBAC3-F94F-4D69-8FFC-9CE0E6E2AF5C}
+	EndGlobalSection
+EndGlobal

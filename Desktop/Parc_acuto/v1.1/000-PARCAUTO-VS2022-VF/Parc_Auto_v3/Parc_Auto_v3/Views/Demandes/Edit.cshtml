@@ -1,0 +1,108 @@
+﻿@model Parc_Auto_v3.Models.Demandes
+
+@{
+    ViewData["Title"] = "Edit Demande";
+}
+
+<h1>Modifier la demande</h1>
+
+<h4>Demandes</h4>
+<hr />
+@if (Model.Etat != "Accepted" && Model.Etat != "Refused")
+ 
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div class="form-group">
+                    <label asp-for="Nom" class="control-label"></label>
+                    <input asp-for="Nom" class="form-control" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prenom" class="control-label"></label>
+                    <input asp-for="Prenom" class="form-control" />
+                    <span asp-validation-for="Prenom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdEmploye" class="control-label"></label>
+                    <input asp-for="IdEmploye" class="form-control" />
+                    <span asp-validation-for="IdEmploye" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AffectationDepartement" class="control-label"></label>
+                    <input asp-for="AffectationDepartement" class="form-control" />
+                    <span asp-validation-for="AffectationDepartement" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TypeVoiture" class="control-label"></label>
+                    <select asp-for="TypeVoiture" class="form-control">
+                        <option value="">Select Type</option>
+                        <option value="4 Places">4 Places</option>
+                        <option value="Utilitaire">Utilitaire</option>
+                    </select>
+                    <span asp-validation-for="TypeVoiture" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Destination" class="control-label"></label>
+                    <input asp-for="Destination" class="form-control" />
+                    <span asp-validation-for="Destination" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateDepart" class="control-label">Date Depart</label>
+                    <input asp-for="DateDepart" type="date" class="form-control" />
+                    <span asp-validation-for="DateDepart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateArrivee" class="control-label">Date Arrivee</label>
+                    <input asp-for="DateArrivee" type="date" class="form-control" />
+                    <span asp-validation-for="DateArrivee" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Accompagnateur" class="control-label"></label>
+                    <input asp-for="Accompagnateur" class="form-control" />
+                    <span asp-validation-for="Accompagnateur" class="text-danger"></span>
+                </div> 
+
+                <div class="form-group">
+                    <label asp-for="Mission" class="control-label"></label>
+                    <input asp-for="Mission" class="form-control" />
+                    <span asp-validation-for="Mission" class="text-danger"></span>
+                </div>
+
+                <input type="hidden" asp-for="Etat" />
+
+                <div class="form-group">
+                    <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+else
+{
+
+
+                @if (Model.Etat == "Accepted")
+                {
+        <p>Cette demande est acceptée et ne peut être modifiée.</p>
+                }
+          
+                else
+                    {
+        <p> Cette demande est refusée et ne peut être modifiée.</p>
+                    }
+ 
+}
+<div>
+    <a asp-action="Index">
+        Retour à la liste
+    </a>
+</div>

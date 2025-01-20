@@ -1,0 +1,75 @@
+﻿@model Parc_Auto_v3.Models.Sinistre
+
+@{
+    ViewData["Title"] = "Create Sinistre";
+}
+
+<h2>
+    Créer un sinistre
+</h2>
+
+<h4>Sinistre</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="DateDommage" class="control-label"></label>
+                <input asp-for="DateDommage" type="date" class="form-control" />
+                <span asp-validation-for="DateDommage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observation" class="control-label"></label>
+                <input asp-for="Observation" class="form-control" />
+                <span asp-validation-for="Observation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+         
+            <div class="form-group">
+                <label asp-for="EtatDeVoiture" class="control-label"></label>
+                <input asp-for="EtatDeVoiture" class="form-control" />
+                <span asp-validation-for="EtatDeVoiture" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Date_circulation" class="control-label"></label>
+                <input asp-for="Date_circulation" type="date" class="form-control" />
+                <span asp-validation-for="Date_circulation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PrixFixe" class="control-label">Prix unitaire</label>
+                <input asp-for="PrixFixe" class="form-control" />
+                <span asp-validation-for="PrixFixe" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="VoitureId" class="control-label"></label>
+                <select asp-for="VoitureId" class="form-control" asp-items="ViewBag.VoitureId"></select>
+                <span asp-validation-for="VoitureId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Créer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">
+        Retour à la liste
+    </a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

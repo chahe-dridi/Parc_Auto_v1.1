@@ -1,0 +1,79 @@
+﻿@model Parc_Auto_v3.Models.Vidange
+
+@{
+    ViewData["Title"] = "Vidange Details";
+}
+
+<h2>Vidange Details</h2>
+
+<div>
+    <h4>Vidange</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateIntervention)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DateIntervention.ToString("yyyy-MM-dd")
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeIntervention)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.TypeIntervention
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fournisseur)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Fournisseur
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NFacture)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NFacture
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kilometrage)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Kilometrage
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OperationDetails)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.OperationDetails
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MontantHt)
+        </dt>
+        <dd class="col-sm-10">
+      
+            @Html.DisplayFor(model => model.MontantHt)
+        </dd>
+     
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Voiture.Matricule
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+        Modifier
+    </a> |
+    <a asp-action="Index" class="btn btn-secondary">
+        Retour à la liste
+    </a>
+</div>

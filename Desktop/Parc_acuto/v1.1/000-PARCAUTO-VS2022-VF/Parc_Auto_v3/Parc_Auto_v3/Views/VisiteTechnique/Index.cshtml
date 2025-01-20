@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Parc_Auto_v3.Models.VisiteTechnique>
+
+@{
+    ViewData["Title"] = "liste des Visites Techniques";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link href=" " rel="stylesheet" />
+
+    <link href="~/css/admin.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #e9ecef;
+        }
+
+        .container-custom {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-custom thead {
+            background: #343a40;
+            color: #fff;
+        }
+
+        .table-custom tbody tr:hover {
+            background: #f1f1f1;
+        }
+
+        .btn-custom {
+            border-radius: 50px;
+            padding: 5px 15px;
+        }
+
+        .form-inline .input-group {
+            width: 100%;
+        }
+
+        .form-inline .form-control {
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        .form-inline .btn-outline-secondary {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin: 2px;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 container-custom">
+        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+        }
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+        }
+
+        <div class="row mb-4">
+            <div class="col-md-2 mb-2 mb-md-0">
+                <a asp-action="Create" class="btn btn-primary btn-block btn-custom">
+                    ajouter une visite technique
+
+                </a>
+            </div>
+            <div class="col-md-8">
+                <form class="form-inline float-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchString" name="searchString" placeholder="Recherche par Matricule..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="visiteTechniqueList">
+            @await Html.PartialAsync("_VisiteTechniqueListPartial", Model)
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#searchString').on('input', function () {
+                var searchString = $(this).val();
+                $.ajax({
+                    url: '@Url.Action("Search", "VisiteTechnique")',
+                    type: 'GET',
+                    data: { searchString: searchString },
+                    success: function (data) {
+                        $('#visiteTechniqueList').html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Search failed: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+ 

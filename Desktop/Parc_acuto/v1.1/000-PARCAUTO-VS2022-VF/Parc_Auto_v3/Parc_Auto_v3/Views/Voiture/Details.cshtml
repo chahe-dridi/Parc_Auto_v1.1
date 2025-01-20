@@ -1,0 +1,315 @@
+﻿@model Parc_Auto_v3.Models.Voiture
+
+@{
+    ViewData["Title"] = "Voiture Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f4f7f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .container-custom {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .btn-custom {
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn-group .btn {
+            margin: 5px;
+        }
+
+        .details-table dt {
+            font-weight: 600;
+        }
+
+        .details-table dd {
+            margin-bottom: 15px;
+        }
+
+        .details-header {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .btn-group-custom {
+            margin: 20px 0;
+        }
+
+        .btn-info-custom {
+            background-color: #007bff;
+            border: none;
+        }
+
+            .btn-info-custom:hover {
+                background-color: #0056b3;
+            }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .details-card {
+            margin-bottom: 20px;
+        }
+
+        .card-body dl {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 container-custom">
+        <div class="details-header text-center">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+        <h3 style="text-align: center; margin-top: 20px;">
+
+            Montant total dépensé :
+            <span style="color: #FF5733;">
+                @((ViewBag.TotalVisiteTechnique + ViewBag.TotalVignette + ViewBag.TotalVidange + ViewBag.TotalAssurance).ToString("F2")) TND
+            </span>
+        </h3>
+
+        <div class="btn-group-custom text-center">
+            <h4 class="section-title">Matricule @Model.Matricule</h4>
+            <div class="btn-group" role="group">
+                <a asp-action="Create" asp-controller="VisiteTechnique" asp-route-voitureId="@Model.Id" class="btn btn-info btn-info-custom btn-custom">
+                    Créer une technique de visite
+                </a>
+                <a asp-action="Create" asp-controller="Vidange" asp-route-voitureId="@Model.Id" class="btn btn-info btn-info-custom btn-custom">
+                    Créer un 
+                    Vidange
+                </a>
+                <a asp-action="Create" asp-controller="Vignette" asp-route-voitureId="@Model.Id" class="btn btn-info btn-info-custom btn-custom">
+                    Créer une vignette
+                </a>
+                <a asp-action="Create" asp-controller="Assurance" asp-route-voitureId="@Model.Id" class="btn btn-info btn-info-custom btn-custom">
+                    Créer une assurance
+                </a>
+                <a asp-action="Create" asp-controller="Sinistre" asp-route-voitureId="@Model.Id" class="btn btn-info btn-info-custom btn-custom">
+                    Créer un sinistre
+                </a>
+            </div>
+        </div>
+
+        <div class="card details-card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    Détails du véhicule
+                </h4>
+            </div>
+            <div class="card-body">
+                <dl class="row details-table">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Matricule)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Matricule)
+                    </dd>
+
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.NumeroSerieCarteGrise)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.NumeroSerieCarteGrise)
+                    </dd>
+
+
+
+
+
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.TypeVoiture)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.TypeVoiture)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Marque)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Marque.Nom)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Modele)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Modele.Nom)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Km)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Km)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Carburant)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Carburant)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Disponibilite)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Disponibilite)
+                    </dd>
+                </dl>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-custom">modifier</a>
+                <a asp-action="Index" class="btn btn-secondary btn-custom">  Retour à la liste</a>
+            </div>
+        </div>
+
+
+
+        <!--chart section -->
+
+
+        <div style="width: 300px; height: 300px; margin: 0 auto;">
+            <canvas id="costChart"></canvas>
+        </div>
+
+
+
+
+        <!-- New Section for Kilometrage Details -->
+        <div class="card details-card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    Détails du kilométrage des demandes
+                </h4>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Kilometrage</th>
+                            <th>Destination</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.Demandes != null)
+                        {
+                            foreach (var demande in ViewBag.Demandes as List<Parc_Auto_v3.Models.Demandes>)
+                            {
+                                <tr>
+                                    <td>@demande.DateDepart.ToString("yyyy-MM-dd")</td>
+                                    <td>@demande.Kilometrage</td>
+                                    <td>@demande.Destination</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3" class="text-center">
+                                    Aucune donnée kilométrique disponible
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+       
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var ctx = document.getElementById('costChart').getContext('2d');
+        var costChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    'Visite Technique: ' + @ViewBag.TotalVisiteTechnique.ToString("F2") + ' TND',
+                    'Vignette: ' + @ViewBag.TotalVignette.ToString("F2") + ' TND',
+                    'Vidange: ' + @ViewBag.TotalVidange.ToString("F2") + ' TND',
+                    'Assurance: ' + @ViewBag.TotalAssurance.ToString("F2") + ' TND'
+                ],
+                datasets: [{
+                    label: 'Total Money Spent',
+                    data: [
+        @ViewBag.TotalVisiteTechnique,
+        @ViewBag.TotalVignette,
+        @ViewBag.TotalVidange,
+        @ViewBag.TotalAssurance
+                        ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                // Display the label along with the value and unit
+                                return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + ' TND';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>

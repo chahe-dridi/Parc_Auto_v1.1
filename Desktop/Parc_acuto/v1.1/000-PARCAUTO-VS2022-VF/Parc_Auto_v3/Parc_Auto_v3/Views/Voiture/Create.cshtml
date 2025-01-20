@@ -1,0 +1,403 @@
+﻿@model Parc_Auto_v3.Models.Voiture
+
+@{
+    ViewData["Title"] = "Create Voiture";
+}
+
+<h1>
+    Créer une voiture
+</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="voitureForm" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Matricule" class="control-label"></label>
+                <div class="d-flex justify-content-center">
+                    <input type="text" id="leftPart" class="form-control text-end" placeholder="Gauche" style="width: 80px;" maxlength="4" />
+                    <input asp-for="Matricule" id="Matricule" class="form-control text-center mx-2" readonly style="width: 150px;" />
+                    <input type="text" id="rightPart" class="form-control text-start" placeholder="Droite" style="width: 80px;" maxlength="4" />
+                </div>
+                <span id="matricule-error" class="text-danger"></span>
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+                <label asp-for="NumeroSerieCarteGrise" class="control-label"></label>
+                <input asp-for="NumeroSerieCarteGrise" class="form-control" maxlength="17" minlength="17" />
+                <span asp-validation-for="NumeroSerieCarteGrise" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="TypeVoiture" class="control-label"></label>
+                <select asp-for="TypeVoiture" class="form-control" id="TypeVoiture">
+                    <option value="">
+                        -- Sélectionnez le type
+                        --
+                    </option>
+                    <option value="4 Places">4 Places</option>
+                    <option value="Utilitaire">Utilitaire</option>
+                </select>
+                <span id="type voiture-error" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Marque" class="control-label"></label>
+                <select asp-for="MarqueId" class="form-control" id="marque-select">
+                    <option value="">-- Sélectionnez une marque --</option>
+                    @foreach (var marque in ViewBag.Marques)
+                    {
+                        <option value="@marque.Id">@marque.Nom</option>
+                    }
+                </select>
+                <button type="button" class="btn btn-primary" id="addMarque">Add Marque</button>
+                <button type="button" class="btn btn-secondary" id="updateMarque">Update Marque</button>
+                <button type="button" class="btn btn-danger" id="deleteMarque">Delete Marque</button>
+                <input type="text" id="updatedMarqueName" class="form-control" placeholder="Update Marque" />
+               
+                <span id="marque-error" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Modele" class="control-label"></label>
+                <select asp-for="ModeleId" class="form-control" id="modele-select">
+                    <option value="">-- Sélectionnez le modèle --</option>
+                </select>
+                <button type="button" class="btn btn-primary" id="addModele">Add Modele</button>
+                <button type="button" class="btn btn-secondary" id="updateModele">Update Modele</button>
+                <button type="button" class="btn btn-danger" id="deleteModele">Delete Modele</button>
+                <input type="text" id="updatedModeleName" class="form-control" placeholder="Update Modele" />
+             
+                <span id="modele-error" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Km" class="control-label"></label>
+                <input asp-for="Km" class="form-control" id="Km" />
+                <span id="km-error" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Carburant" class="control-label"></label>
+                <select asp-for="Carburant" class="form-control" id="Carburant">
+                    <option value="">
+                        -- Sélectionnez le carburateur
+                        --
+                    </option>
+                    <option value="Essence">Essence</option>
+                    <option value="Gazol">Gazol</option>
+                </select>
+                <span id="carburant-error" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Disponibilite" class="control-label"></label>
+                <select asp-for="Disponibilite" class="form-control" id="Disponibilite">
+                    <option value="">-- Sélectionnez Disponibilité --</option>
+                    <option value="En panne">En panne</option>
+                    <option value="Reserved">Reserve</option>
+                    <option value="Disponible">Disponible</option>
+                    <option value="En Arrivage">En Arrivage</option>
+                </select>
+                <span id="disponibilite-error" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">créer</button>
+            <a asp-action="Index" class="btn btn-secondary">
+                Retour à la liste
+            </a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                function updateMatricule() {
+                    var leftPart = $('#leftPart').val();
+                    var rightPart = $('#rightPart').val();
+                    $('#Matricule').val(leftPart + ' TU ' + rightPart);
+                }
+
+
+            //--
+
+            $('#updateMarque').click(function () {
+                var marqueId = $('#marque-select').val();
+                var updatedMarque = $('#updatedMarqueName').val();
+
+                if (marqueId && updatedMarque) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("UpdateMarque")',
+                        data: { marqueId: marqueId, updatedMarque: updatedMarque },
+                        success: function (response) {
+                            alert('Marque updated successfully!');
+                            location.reload(); // Reload the page to reflect changes
+                        },
+                        error: function (xhr) {
+                            alert('Failed to update marque: ' + xhr.responseText);
+                        }
+                    });
+                } else {
+                    alert('Please select a marque and enter a valid name.');
+                }
+            });
+
+            $('#updateModele').click(function () {
+                var modeleId = $('#modele-select').val();
+                var updatedModele = $('#updatedModeleName').val();
+
+                if (modeleId && updatedModele) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("UpdateModele")',
+                        data: { modeleId: modeleId, updatedModele: updatedModele },
+                        success: function (response) {
+                            alert('Modele updated successfully!');
+                            location.reload(); // Reload the page to reflect changes
+                        },
+                        error: function (xhr) {
+                            alert('Failed to update modele: ' + xhr.responseText);
+                        }
+                    });
+                } else {
+                    alert('Please select a modele and enter a valid name.');
+                }
+            });
+
+
+
+            //--
+
+
+            $('#deleteMarque').click(function () {
+                var marqueId = $('#marque-select').val();
+                if (!marqueId) {
+                    alert("Please select a Marque to delete.");
+                    return;
+                }
+
+                if (confirm("Are you sure you want to delete this Marque?")) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteMarque", "Voiture")',
+                        type: 'POST',
+                        data: { marqueId: marqueId },
+                        success: function (response) {
+                            if (response.success) {
+                                alert("Marque deleted successfully.");
+                                location.reload();
+                            } else {
+                                alert("Failed to delete Marque: " + response.message);
+                            }
+                        },
+                        error: function (xhr) {
+                            alert("Failed to delete Marque: " + xhr.responseText);
+                        }
+                    });
+                }
+            });
+
+            // Function to delete a Modele
+            $('#deleteModele').click(function () {
+                var modeleId = $('#modele-select').val();
+                if (!modeleId) {
+                    alert("Please select a Modele to delete.");
+                    return;
+                }
+
+                if (confirm("Are you sure you want to delete this Modele?")) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteModele", "Voiture")',
+                        type: 'POST',
+                        data: { modeleId: modeleId },
+                        success: function (response) {
+                            if (response.success) {
+                                alert("Modele deleted successfully.");
+                                location.reload();
+                            } else {
+                                alert("Failed to delete Modele: " + response.message);
+                            }
+                        },
+                        error: function (xhr) {
+                            alert("Failed to delete Modele: " + xhr.responseText);
+                        }
+                    });
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+                // Event listeners for left and right parts
+                $('#leftPart, #rightPart').on('input', function () {
+                    updateMatricule();
+                });
+
+                // Initialize the Matricule on page load if left or right parts are pre-filled
+                updateMatricule();
+
+             /*   $('#marque-select').change(function () {
+                    var marqueId = $(this).val();
+                    if (marqueId) {
+                        $.getJSON('@Url.Action("GetModelesByMarqueId", "Voiture")', { marqueId: marqueId }, function (data) {
+                            var $modeleSelect = $('#modele-select');
+                            $modeleSelect.empty();
+                            $modeleSelect.append('<option value="">-- Select Modele --</option>');
+                            $.each(data, function (i, modele) {
+                                $modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
+                            });
+                        });
+                    } else {
+                        $('#modele-select').empty().append('<option value="">-- Select Modele --</option>');
+                    }
+                });*/
+
+
+
+            $('#marque-select').change(function () {
+                var marqueId = $(this).val();
+                if (marqueId) {
+                    $.ajax({
+                        url: '@Url.Action("GetModelesByMarqueId", "Voiture")',
+                        data: { marqueId: marqueId },
+                        success: function (data) {
+                            var modeleSelect = $('#modele-select');
+                            modeleSelect.empty();
+                            modeleSelect.append('<option value="">-- Sélectionnez le modèle --</option>');
+                            $.each(data, function (index, modele) {
+                                modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#modele-select').empty().append('<option value="">-- Sélectionnez le modèle --</option>');
+                }
+            });
+
+
+
+
+
+
+
+
+                $('#addMarque').click(function () {
+                    var newMarque = prompt("Enter new Marque:");
+                    if (newMarque) {
+                        $.post('@Url.Action("AddMarque", "Voiture")', { newMarque: newMarque }, function () {
+                            location.reload();
+                        }).fail(function () {
+                            $('#marque-error').text("Failed to add Marque.");
+                        });
+                    }
+                });
+
+                $('#addModele').click(function () {
+                    var newModele = prompt("Enter new Modele:");
+                    var marqueId = $('#marque-select').val();
+                    if (newModele && marqueId) {
+                        $.post('@Url.Action("AddModele", "Voiture")', { newModele: newModele, marqueId: marqueId }, function () {
+                            location.reload();
+                        }).fail(function () {
+                            $('#modele-error').text("Failed to add Modele.");
+                        });
+                    } else {
+                        $('#modele-error').text("Please select a Marque.");
+                    }
+                });
+
+                $('#voitureForm').on('submit', function (e) {
+                    var isValid = true;
+
+
+            
+
+                    // Clear previous error messages
+                    $('.text-danger').text('');
+
+                    // Validate Left Part
+                    if (!$('#leftPart').val()) {
+                    $('#matricule-error').text('La partie gauche est requise.');
+                        isValid = false;
+                    }
+
+                var numSerie = $('#NumeroSerieCarteGrise').val().trim();
+                if (numSerie === "" || numSerie.length !== 17) {
+                    $('#NumeroSerieCarteGrise-error').text('Numero Serie Carte Grise must be exactly 17 characters and cannot be empty.');
+                    isValid = false;
+                } else {
+                    $('#NumeroSerieCarteGrise-error').text(''); // Clear any previous error message
+                }
+
+
+
+                    // Validate Right Part
+                    if (!$('#rightPart').val()) {
+                    $('#matricule-error').text('La partie droite est requise.');
+                        isValid = false;
+                    }
+
+                    // Validate Km
+                    if (!$('#Km').val()) {
+                    $('#km-error').text('Kilometrage est requis.');
+                        isValid = false;
+                    }
+
+                    // Validate Marque
+                    if (!$('#marque-select').val()) {
+                    $('#marque-error').text('Marque est requis.');
+                        isValid = false;
+                    }
+
+                    // Validate Modele
+                    if (!$('#modele-select').val()) {
+                    $('#modele-error').text('Modele est requis.');
+                        isValid = false;
+                    }
+
+                    // Validate TypeVoiture
+                    if (!$('#TypeVoiture').val()) {
+                    $('#typevoiture-error').text('Type Voiture est requis.');
+                        isValid = false;
+                    }
+
+                    // Validate Carburant
+                    if (!$('#Carburant').val()) {
+                        $('#carburant-error').text('Carburant est requis.');
+                        isValid = false;
+                    }
+
+                    // Validate Disponibilite
+                    if (!$('#Disponibilite').val()) {
+                    $('#disponibilite-error').text('Disponibilite est requis.');
+                        isValid = false;
+                    }
+
+                    if (!isValid) {
+                        e.preventDefault(); // Prevent form submission if validation fails
+                    }
+                });
+            });
+
+     
+        </script>
+}

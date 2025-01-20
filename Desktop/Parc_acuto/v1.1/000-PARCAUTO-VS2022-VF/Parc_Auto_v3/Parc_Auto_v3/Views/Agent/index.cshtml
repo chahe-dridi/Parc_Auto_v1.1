@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Parc_Auto_v3.Controllers.DemandeViewModel>
+
+@{
+    ViewData["Title"] = "Liste des demandes";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/admin.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #e9ecef;
+        }
+
+        .container-custom {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-custom thead {
+            background: #343a40;
+            color: #fff;
+        }
+
+        .table-custom tbody tr:hover {
+            background: #f1f1f1;
+        }
+
+        .btn-custom {
+            border-radius: 50px;
+            padding: 5px 15px;
+        }
+
+        .form-inline .input-group {
+            width: 100%;
+        }
+
+        .form-inline .form-control {
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        .form-inline .btn-outline-secondary {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin: 2px;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 container-custom">
+        <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+        }
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+        }
+
+        <div id="userList">
+            @if (Model != null && Model.Any())
+            {
+                <table class="table table-custom">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Voiture Matricule</th>
+                            <th>Last Kilométrage</th>
+                            <th>New Kilométrage</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Demande.Id</td>
+                                <td>@item.Demande.Nom</td>
+                                <td>@item.Demande.Prenom</td>
+                                <td>@item.Demande.Voiture?.Matricule</td>
+                                <td>@item.LastKilometrage</td>
+                                <td>
+                                    <form asp-action="UpdateDemande" method="post" class="form-inline">
+                                        <input type="hidden" name="id" value="@item.Demande.Id" />
+                                        <input type="number" name="newKilometrage" class="form-control" required />
+                                        <button type="submit" class="btn btn-primary btn-custom">Update</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else 
+            {
+                <p>Aucune demande pour le moment.</p>
+            }
+        </div>
+    </div>
+</body>
+</html>

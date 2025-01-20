@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Parc_Auto_v3.props" />
+</Project>

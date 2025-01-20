@@ -1,0 +1,107 @@
+﻿@model Parc_Auto_v3.Models.Demandes
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Demandes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdEmploye)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdEmploye)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AffectationDepartement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AffectationDepartement)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeVoiture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeVoiture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateDepart)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateDepart)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateArrivee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateArrivee)
+        </dd>
+      
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mission)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mission)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Accompagnateur)
+        </dt>
+        <dd class="col-sm-10 text-danger">
+            @Html.DisplayFor(model => model.Accompagnateur)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Etat == "Refused")
+            {
+                <span class="text-danger">Refusé</span>
+            }
+            else if (Model.Voiture != null)
+            {
+                @Model.Voiture.Matricule
+            }
+            else
+            {
+                <span class="text-muted">Non attribué</span>
+            }
+        </dd>
+
+      
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Modifier</a> |
+    <a asp-action="Index" class="btn btn-secondary">
+        Retour à la liste
+    </a>
+</div>

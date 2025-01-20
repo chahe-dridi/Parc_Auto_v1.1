@@ -1,0 +1,141 @@
+﻿@model Parc_Auto_v3.Models.Demandes
+
+@{
+    ViewData["Title"] = "Edit Demande";
+}
+
+<h1>Modifier la demande</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Nom" class="control-label"></label>
+        <input asp-for="Nom" class="form-control" />
+        <span asp-validation-for="Nom" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prenom" class="control-label"></label>
+        <input asp-for="Prenom" class="form-control" />
+        <span asp-validation-for="Prenom" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdEmploye" class="control-label"></label>
+        <input asp-for="IdEmploye" class="form-control" />
+        <span asp-validation-for="IdEmploye" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AffectationDepartement" class="control-label"></label>
+        <input asp-for="AffectationDepartement" class="form-control" />
+        <span asp-validation-for="AffectationDepartement" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TypeVoiture" class="control-label"></label>
+        <select asp-for="TypeVoiture" class="form-control">
+            <option value="">Select Type</option>
+            <option value="4 Places">4 Places</option>
+            <option value="Utilitaire">Utilitaire</option>
+        </select>
+        <span asp-validation-for="TypeVoiture" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Destination" class="control-label"></label>
+        <input asp-for="Destination" class="form-control" />
+        <span asp-validation-for="Destination" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateDepart" class="control-label"></label>
+        <input asp-for="DateDepart" class="form-control" type="date" />
+        <span asp-validation-for="DateDepart" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateArrivee" class="control-label"></label>
+        <input asp-for="DateArrivee" class="form-control" type="date" />
+        <span asp-validation-for="DateArrivee" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Accompagnateur" class="control-label"></label>
+        <input asp-for="Accompagnateur" class="form-control" />
+        <span asp-validation-for="Accompagnateur" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Mission" class="control-label"></label>
+        <input asp-for="Mission" class="form-control" />
+        <span asp-validation-for="Mission" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Kilometrage" class="control-label"></label>
+        <input asp-for="Kilometrage" class="form-control" />
+        <span asp-validation-for="Kilometrage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Etat" class="control-label"></label>
+        <select asp-for="Etat" class="form-control" id="etatSelect">
+            <option value="En attente">En attente</option>
+            <option value="Accepted">Accepted</option>
+            <option value="Refused">Refused</option>
+        </select>
+        <span asp-validation-for="Etat" class="text-danger"></span>
+    </div>
+
+    <div class="form-group" id="carSelection" style="display: @(Model.Etat == "Refused" ? "none" : "block")">
+        <label for="voitureId">Select a Car:</label>
+        <select asp-for="VoitureId" class="form-control">
+            <option value="">-- Select a Car --</option>
+            @foreach (var voiture in ViewBag.AvailableVoitures as IEnumerable<Parc_Auto_v3.Models.Voiture>)
+            {
+                <option value="@voiture.Id">@voiture.Matricule</option>
+            }
+        </select>
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+        <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('etatSelect').addEventListener('change', function () {
+            var carSelectionDiv = document.getElementById('carSelection');
+            var carSelectElement = document.querySelector('select[asp-for="VoitureId"]');
+
+            if (this.value === 'Accepted') {
+                carSelectionDiv.style.display = 'block';
+                if (!carSelectElement.value) {
+                    carSelectElement.setCustomValidity('Please select a car.');
+                } else {
+                    carSelectElement.setCustomValidity('');
+                }
+            } else {
+                carSelectionDiv.style.display = 'none';
+                carSelectElement.value = ''; // Clear the selection if state is Refused
+                carSelectElement.setCustomValidity('');
+            }
+        });
+    </script>
+}
+

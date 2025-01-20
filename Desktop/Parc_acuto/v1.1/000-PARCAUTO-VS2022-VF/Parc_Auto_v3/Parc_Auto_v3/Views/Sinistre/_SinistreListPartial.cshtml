@@ -1,0 +1,43 @@
+﻿@model List<Parc_Auto_v3.Models.Sinistre>
+
+<table class="table table-bordered table-hover table-custom">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().DateDommage)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Observation)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Description)</th>
+        
+            <th>@Html.DisplayNameFor(model => model.First().EtatDeVoiture)</th>
+            <th>Prix unitaire</th>
+            <th>@Html.DisplayNameFor(model => model.First().Date_circulation)</th>
+        
+
+            <th>Voiture</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DateDommage.ToString("yyyy-MM-dd")</td>
+                <td>@item.Observation</td>
+                <td>@item.Description</td>
+            
+                <td>@item.EtatDeVoiture</td>         
+                <td>@Html.DisplayFor(modelItem => item.PrixFixe)</td>
+                <td>@Html.DisplayFor(modelItem => item.Date_circulation)</td>
+           
+
+
+
+                <td>@item.Voiture.Matricule</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-custom">modifier</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info btn-custom">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-custom">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

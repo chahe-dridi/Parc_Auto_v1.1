@@ -1,0 +1,148 @@
+﻿@model Parc_Auto_v3.Models.Demandes
+
+@{
+    ViewData["Title"] = "Demande Details";
+}
+
+<h1>
+    Détails de la demande
+</h1>
+
+<div>
+    <h4>Demande</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nom</dt>
+        <dd class="col-sm-10">@Model.Nom</dd>
+
+        <dt class="col-sm-2">Prenom</dt>
+        <dd class="col-sm-10">@Model.Prenom</dd>
+
+        <dt class="col-sm-2">Id Employe</dt>
+        <dd class="col-sm-10">@Model.IdEmploye</dd>
+
+        <dt class="col-sm-2">Affectation Departement</dt>
+        <dd class="col-sm-10">@Model.AffectationDepartement</dd>
+
+        <dt class="col-sm-2">Type Voiture</dt>
+        <dd class="col-sm-10">@Model.TypeVoiture</dd>
+
+        <dt class="col-sm-2">Destination</dt>
+        <dd class="col-sm-10">@Model.Destination</dd>
+
+        <dt class="col-sm-2">Date Depart</dt>
+        <dd class="col-sm-10">@Model.DateDepart.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Date Arrivee</dt>
+        <dd class="col-sm-10">@Model.DateArrivee.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Mission</dt>
+        <dd class="col-sm-10">@Model.Mission</dd>
+
+        <dt class="col-sm-2">Kilometrage</dt>
+        <dd class="col-sm-10">@Model.Kilometrage</dd>
+
+         <dt class="col-sm-2">Accompagnateur</dt>
+        <dd class="col-sm-10">@Model.Accompagnateur</dd>
+
+        <dt class="col-sm-2">Etat</dt>
+        <dd class="col-sm-10">
+            @if (Model.Etat == "Accepted")
+            {
+                <span class="badge bg-success">Accepted</span>
+            }
+            else if (Model.Etat == "Refused")
+            {
+                <span class="badge bg-danger">Refused</span>
+            }
+            else
+            {
+                <span class="badge bg-warning text-dark">Pending</span>
+            }
+        </dd>
+
+        <dt class="col-sm-2">Matricule</dt>
+        <dd class="col-sm-10">
+            @if (Model.Etat == "Refused")
+            {
+                <span class="text-danger">Refused</span>
+            }
+            else if (Model.Voiture != null)
+            {
+                @Model.Voiture.Matricule
+            }
+            else
+            {
+                <span class="text-muted">Not Assigned</span>
+            }
+        </dd>
+    </dl>
+</div>
+
+@if (Model.Etat != "Accepted" && Model.Etat != "Refused")
+{
+    <div>
+        <h4>Accept or Refuse Demande</h4>
+
+        <form asp-action="ConfirmAcceptance" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+
+            <div class="form-group">
+                <label for="voitureId">Selecte une voiture:</label>
+                <select name="voitureId" id="voitureId" class="form-control">
+                    <option value="">-- Selecte une voiture --</option>
+                    @foreach (var voiture in ViewBag.AvailableVoitures)
+                    {
+                        <option value="@voiture.Id">
+                            @if (voiture.Marque != null && voiture.Modele != null)
+                            {
+                                @voiture.Marque.Nom @voiture.Modele.Nom
+                            }
+                            else
+                            {
+                                @voiture.Matricule
+                            }
+                        </option>
+                    }
+                </select>
+                <span asp-validation-for="VoitureId" class="text-danger"></span>
+            </div>
+
+            <button type="submit" name="action" value="Accept" class="btn btn-success w-100 mb-2">
+                Accepter
+            </button>
+            <button type="submit" name="action" value="Refuse" class="btn btn-danger w-100 mb-2">Refuser</button>
+        </form>
+    </div>
+}
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <a asp-action="Index" class="btn btn-primary w-100 mb-2">
+            Retour à la liste
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning w-100 mb-2">Modifier</a>
+    </div>
+    <div class="col-md-4">
+        <form asp-action="Delete" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette demande ?');">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <input type="submit" value="Supprimer" class="btn btn-danger w-100 mb-2" />
+        </form>
+    </div>
+</div>
+
+@if (Model.Voiture != null)
+{
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <a asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-info w-100">
+                Télécharger le PDF
+            </a>
+        </div>
+    </div>
+}

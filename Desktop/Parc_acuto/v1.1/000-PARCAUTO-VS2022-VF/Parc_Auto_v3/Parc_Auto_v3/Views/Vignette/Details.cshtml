@@ -1,0 +1,50 @@
+﻿@model Parc_Auto_v3.Models.Vignette
+
+@{
+    ViewData["Title"] = "Vignette Details";
+}
+
+<h1>Vignette Details</h1>
+
+<div>
+    <h4>Vignette</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateEchance)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DateEchance.ToString("yyyy-MM-dd")
+ 
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateValide)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.DateValide.ToString("yyyy-MM-dd")
+ 
+        </dd>
+      
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrixUnitaire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrixUnitaire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Matricule)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+        Modifier
+    </a> |
+    <a asp-action="Index" class="btn btn-secondary">
+        Retour à la liste
+    </a>
+</div>

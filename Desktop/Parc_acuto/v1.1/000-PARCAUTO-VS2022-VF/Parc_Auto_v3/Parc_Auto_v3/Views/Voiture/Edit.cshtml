@@ -1,0 +1,249 @@
+﻿@model Parc_Auto_v3.Models.Voiture
+
+@{
+    ViewData["Title"] = "Edit Voiture";
+}
+
+<h1>Modifier la voiture
+</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Matricule Field -->
+            <div class="form-group">
+                <label asp-for="Matricule" class="control-label"></label>
+                <div class="d-flex justify-content-center">
+                    @{
+                        var matricule = Model.Matricule ?? "";
+                        var tuIndex = matricule.IndexOf("TU");
+                        var leftPart = tuIndex > 0 ? matricule.Substring(0, tuIndex).Trim() : matricule;
+                        var rightPart = tuIndex >= 0 ? matricule.Substring(tuIndex + 2).Trim() : "";
+                    }
+                    <input type="text" id="leftPart" class="form-control text-end" placeholder="Left" style="width: 80px;" maxlength="5" value="@leftPart" />
+                    <input asp-for="Matricule" id="Matricule" class="form-control text-center mx-2" readonly style="width: 120px;" value="@Model.Matricule" />
+                    <input type="text" id="rightPart" class="form-control text-start" placeholder="Right" style="width: 80px;" maxlength="4" value="@rightPart" />
+                </div>
+                <span asp-validation-for="Matricule" class="text-danger"></span>
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+                <label asp-for="NumeroSerieCarteGrise" class="control-label"></label>
+                <input asp-for="NumeroSerieCarteGrise" class="form-control" maxlength="17" minlength="17" />
+                <span asp-validation-for="NumeroSerieCarteGrise" class="text-danger"></span>
+            </div>
+
+
+            <!-- TypeVoiture Field -->
+            <div class="form-group">
+                <label asp-for="TypeVoiture" class="control-label"></label>
+                <select asp-for="TypeVoiture" class="form-control">
+                          <option value="4 Places" selected="@((Model.TypeVoiture == "4 Places") ? "selected" : null)">4 Places</option>
+                          <option value="Utilitaire" selected="@((Model.TypeVoiture == "Utilitaire") ? "selected" : null)">Utilitaire</option>
+
+                </select>
+                <span asp-validation-for="TypeVoiture" class="text-danger"></span>
+            </div>
+
+            <!-- Marque Field -->
+            <div class="form-group">
+                <label asp-for="Marque" class="control-label"></label>
+                <select asp-for="MarqueId" class="form-control" id="marque-select">
+                   
+                    @foreach (var marque in ViewBag.Marques)
+                    {
+                        <option value="@marque.Id" selected="@(marque.Id == Model.MarqueId ? "selected" : null)">@marque.Nom</option>
+
+                    }
+                </select>
+                <button type="button" class="btn btn-primary" id="addMarque">Add Marque</button>
+                <span asp-validation-for="MarqueId" class="text-danger"></span>
+            </div>
+
+            <!-- Modele Field -->
+            <div class="form-group">
+                <label asp-for="Modele" class="control-label"></label>
+                <select asp-for="ModeleId" class="form-control" id="modele-select">
+               
+                </select>
+                <button type="button" class="btn btn-primary" id="addModele">Add Modele</button>
+                <span asp-validation-for="ModeleId" class="text-danger"></span>
+            </div>
+
+            <!-- Km Field -->
+            <div class="form-group">
+                <label asp-for="Km" class="control-label"></label>
+                <input asp-for="Km" class="form-control" />
+                <span asp-validation-for="Km" class="text-danger"></span>
+            </div>
+
+            <!-- Carburant Field -->
+            <div class="form-group">
+                <label asp-for="Carburant" class="control-label"></label>
+                <select asp-for="Carburant" class="form-control">
+                    <option value="Essence" selected="@(Model.Carburant == "Essence" ? "selected" : null)">Essence</option>
+                    <option value="Gazol" selected="@(Model.Carburant == "Gazol" ? "selected" : null)">Gazol</option>
+                </select>
+                <span asp-validation-for="Carburant" class="text-danger"></span>
+            </div>
+
+            <!-- Disponibilite Field -->
+            <div class="form-group">
+                <label asp-for="Disponibilite" class="control-label"></label>
+                <select asp-for="Disponibilite" class="form-control">
+                    <option value="Pre Reserved" selected="@(Model.Disponibilite == "En panne" ? "En panne" : null)">En Panne</option>
+                    <option value="Reserved" selected="@(Model.Disponibilite == "Reserved" ? "selected" : null)">Reserve</option>
+                    <option value="Disponible" selected="@(Model.Disponibilite == "Disponible" ? "selected" : null)">Disponible</option>
+                    <option value="En Arrivage" selected="@(Model.Disponibilite == "En Arrivage" ? "selected" : null)">En Arrivage</option>
+                </select>
+                <span asp-validation-for="Disponibilite" class="text-danger"></span>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">sauvegarder</button>
+            <a asp-action="Index" class="btn btn-secondary">  Retour à la liste</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function updateMatricule() {
+                var leftPart = $('#leftPart').val().trim();
+                var rightPart = $('#rightPart').val().trim();
+                $('#Matricule').val(leftPart + ' TU ' + rightPart);
+            }
+
+            // Event listeners for left and right parts
+            $('#leftPart, #rightPart').on('input', function () {
+                updateMatricule();
+            });
+
+            // Initialize the Matricule on page load if left or right parts are pre-filled
+            updateMatricule();
+
+            // Fetch and populate the Modele options based on selected Marque
+            $('#marque-select').change(function () {
+                var marqueId = $(this).val();
+                if (marqueId) {
+                    $.getJSON('@Url.Action("GetModelesByMarqueId", "Voiture")', { marqueId: marqueId }, function (data) {
+                        var $modeleSelect = $('#modele-select');
+                        $modeleSelect.empty();
+                 
+                        $.each(data, function (i, modele) {
+                            $modeleSelect.append('<option value="' + modele.id + '">' + modele.nom + '</option>');
+                        });
+
+                        // Set selected Modele
+                        var selectedModeleId = '@Model.ModeleId';
+                        if (selectedModeleId) {
+                            $modeleSelect.val(selectedModeleId);
+                        }
+                    });
+                } else {
+                    $('#modele-select').empty().append('<option value="">-- Select Modele --</option>');
+                }
+            });
+
+            // Trigger change event on page load to populate Modele dropdown if MarqueId is pre-selected
+            $('#marque-select').trigger('change');
+
+            $('#addMarque').click(function () {
+                var newMarque = prompt("Enter new Marque:");
+                if (newMarque) {
+                    $.post('@Url.Action("AddMarque", "Voiture")', { newMarque: newMarque }, function () {
+                        location.reload();
+                    });
+                }
+            });
+
+            $('#addModele').click(function () {
+                var newModele = prompt("Enter new Modele:");
+                if (newModele) {
+                    $.post('@Url.Action("AddModele", "Voiture")', { newModele: newModele }, function () {
+                        location.reload();
+                    });
+                }
+            });
+
+            // Form validation
+            $('#voitureForm').on('submit', function (e) {
+                var isValid = true;
+
+                // Clear previous error messages
+                $('.text-danger').text('');
+
+                // Validate NumeroSerieCarteGrise length
+                var numSerie = $('#NumeroSerieCarteGrise').val();
+                if (numSerie.length !== 17) {
+                    $('#NumeroSerieCarteGrise').next('.text-danger').text('Numero Serie Carte Grise must be exactly 17 characters.');
+                    isValid = false;
+                }
+
+                // Validate other fields (example for Km)
+                if (!$('#Km').val()) {
+                    $('#Km').next('.text-danger').text('Kilometrage est requis.');
+                    isValid = false;
+                }
+
+                // Validate Marque
+                if (!$('#marque-select').val()) {
+                    $('#marque-error').text('Marque est requis.');
+                    isValid = false;
+                }
+
+                // Validate Modele
+                if (!$('#modele-select').val()) {
+                    $('#modele-error').text('Modele est requis.');
+                    isValid = false;
+                }
+
+                // Validate TypeVoiture
+                if (!$('#TypeVoiture').val()) {
+                    $('#typevoiture-error').text('Type Voiture est requis.');
+                    isValid = false;
+                }
+
+                // Validate Carburant
+                if (!$('#Carburant').val()) {
+                    $('#carburant-error').text('Carburant est requis.');
+                    isValid = false;
+                }
+
+                // Validate Disponibilite
+                if (!$('#Disponibilite').val()) {
+                    $('#disponibilite-error').text('Disponibilite est requis.');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    e.preventDefault(); // Prevent form submission if validation fails
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+}

@@ -1,0 +1,89 @@
+﻿@model Parc_Auto_v3.Models.Demandes
+
+@{
+    ViewData["Title"] = "Delete Demande";
+}
+
+<h1>Delete Demande</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Demandes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdEmploye)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdEmploye)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AffectationDepartement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AffectationDepartement)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeVoiture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeVoiture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateDepart)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateDepart)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateArrivee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateArrivee)
+        </dd>
+        
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mission)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mission)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VoitureId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VoitureId)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

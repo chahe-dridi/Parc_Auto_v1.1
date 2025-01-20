@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Hello Page";
+}
+
+<style>
+    .image-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+        .image-container img {
+            max-width: 45%;
+            cursor: pointer;
+        }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <div class="image-container">
+        <a href="@Url.Action("NewDemandPage", "Home")">
+            <img src="~/images/left_image.jpg" alt="Left Image">
+        </a>
+
+
+
+        <a href="@Url.Action("NewDemandPage", "Home")">
+            <img src="~/images/right_image.jpg" alt="Right Image">
+        </a>
+    </div>
+</div>

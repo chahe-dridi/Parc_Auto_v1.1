@@ -1,0 +1,80 @@
+﻿@model Parc_Auto_v3.Models.Assurance
+
+@{
+    ViewData["Title"] = "Create Assurance";
+}
+
+<h2>
+    Créer une assurance
+</h2>
+
+<h4>Assurance</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="assuranceForm" asp-action="Create">
+            <div class="form-group">
+                <label asp-for="DateEchance" class="control-label"></label>
+                <input asp-for="DateEchance" class="form-control" type="date" id="DateEchance" />
+                <span asp-validation-for="DateEchance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateValide" class="control-label"></label>
+                <input asp-for="DateValide" class="form-control" type="date" id="DateValide" />
+                <span asp-validation-for="DateValide" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PrixUnitaire" class="control-label"></label>
+                <input asp-for="PrixUnitaire" class="form-control" id="PrixUnitaire" />
+                <span id="prixunitaire-error" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VoitureId" class="control-label"></label>
+                <select asp-for="VoitureId" class="form-control" asp-items="@ViewBag.VoitureId"></select>
+                <span asp-validation-for="VoitureId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">
+        Retour à la liste
+    </a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('DateEchance').value = today;
+            document.getElementById('DateValide').value = today;
+        });
+
+        document.getElementById('assuranceForm').addEventListener('submit', function (e) {
+            var prixUnitaire = parseFloat(document.getElementById('PrixUnitaire').value);
+            var isValid = true;
+
+            // Clear previous error message
+            document.getElementById('prixunitaire-error').textContent = '';
+
+            // Check if PrixUnitaire is a positive number
+            if (isNaN(prixUnitaire) || prixUnitaire <= 0) {
+                document.getElementById('prixunitaire-error').textContent = 'Prix Unitaire must be a positive number greater than 0.';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+    </script>
+}

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Parc_Auto_v3.Models.Demandes>
+
+@{
+    ViewData["Title"] = "Your Demands";
+}
+    <link href="~/css/admin.css" rel="stylesheet" />
+<h1 class="text-primary mb-4">Vos Demandes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success mb-3">Créer une nouvelle demande</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>Employé</th>
+                <th>Détails de la voiture</th>
+                <th>Détails de la mission</th>
+                <th>État</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <strong>Nom Prénom:</strong> @item.Nom @item.Prenom <br />
+                        <strong>ID:</strong> @item.IdEmploye <br />
+                        <strong>Département:</strong> @item.AffectationDepartement
+                    </td>
+                    <td>
+                        <strong>Type:</strong> @item.TypeVoiture <br />
+                        <strong>Matricule:</strong>
+                        @if (item.Voiture != null)
+                        {
+                            <span class="badge bg-info text-white">@Html.DisplayFor(modelItem => item.Voiture.Matricule)</span>
+                        }
+                        else
+                        {
+                            @if (item.Etat == "Refused")
+                            {
+                                <span class="badge bg-danger text-white">Refusé</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">En attente</span>
+
+                            }
+                        }
+                    </td>
+                    <td>
+                        <strong>Destination:</strong> @item.Destination <br />
+                        <strong>Mission:</strong> @item.Mission <br />
+                        <strong>Dates:</strong> @item.DateDepart.ToShortDateString() - @item.DateArrivee.ToShortDateString()
+                    </td>
+                    <td>
+                        @if (item.Etat == "Accepted")
+                        {
+                            <span class="badge bg-success text-white">Accepté</span>
+                        }
+                        else if (item.Etat == "Refused")
+                        {
+                            <span class="badge bg-danger text-white">Refusé</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">En attente</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Détails</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5em 0.75em;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+</style>

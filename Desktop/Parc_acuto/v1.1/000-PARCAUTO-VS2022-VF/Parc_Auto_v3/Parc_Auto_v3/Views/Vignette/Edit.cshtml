@@ -1,0 +1,54 @@
+﻿@model Parc_Auto_v3.Models.Vignette
+
+@{
+    ViewData["Title"] = "Edit Vignette";
+}
+
+<h1>
+    Modifier
+    Vignette
+</h1>
+
+<h4>Vignette</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div class="form-group">
+                <label asp-for="DateEchance" class="control-label"></label>
+                <input asp-for="DateEchance" class="form-control" type="date" />
+                <span asp-validation-for="DateEchance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateValide" class="control-label"></label>
+                <input asp-for="DateValide" class="form-control" type="date" />
+                <span asp-validation-for="DateValide" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="PrixUnitaire" class="control-label"></label>
+                <input asp-for="PrixUnitaire" class="form-control" />
+                <span asp-validation-for="PrixUnitaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VoitureId" class="control-label"></label>
+                <select asp-for="VoitureId" class="form-control" asp-items="ViewBag.VoitureId"></select>
+                <span asp-validation-for="VoitureId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-secondary">
+        Retour à la liste
+    </a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,141 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Parc_Auto_v3.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - parc_auto_v3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/parc_auto_v3.styles.css" asp-append-version="true" />
+
+
+    <link rel="stylesheet" id="elementor-frontend-css" href="~/css/frontend.mind5d5.css?ver=3.23.4" media="all" />
+    <link rel="stylesheet" id="elementor-post-4063-css" href="~/css/post1.css?ver=1722328953" media="all" />
+    <link rel="stylesheet" id="elementor-post-4721-css" href="~/css/post2.css?ver=1722955803" media="all" />
+    <link rel="stylesheet" id="elementor-post-21780-css" href="~/css/post3.css?ver=1722930493" media="all" />
+    <link rel="stylesheet" id="google-fonts-1-css" href="~/css/post4.csslic&amp;display=auto&amp;ver=6.6.1" media="all" />
+
+    <link href=" " rel="stylesheet" />
+</head>
+<meta name="generator" content="Elementor 3.23.4; features: additional_custom_breakpoints, e_lazyload; settings: css_print_method-external, google_font-enabled, font_display-auto">
+
+
+<body >
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #32abb4;">
+
+            <div class="container-fluid">
+
+                
+
+                <a class="navbar-brand" asp-area="" asp-controller="" asp-action="">
+
+                    <img src="~/images/Logo_Banque_de_Tunisie.png" alt="Logo" style="height: 40px; width: auto; margin-right: 10px;" />
+                            parc_auto 
+                     </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+                    <ul class="navbar-nav flex-grow-1">
+                     
+                       
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+
+                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "admin") || await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "superadmin"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Services
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Voiture" asp-action="Index">Voitures</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="VisiteTechnique" asp-action="Index">Visite Technique</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Vidange" asp-action="Index">Vidange</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Vignette" asp-action="Index">Vignette</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Assurance" asp-action="Index">Assurance</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Sinistre" asp-action="Index">Sinistre</a></li>
+ 
+
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="DemandesAdmin" asp-action="Index">administrateur</a>
+                                </li>
+
+                             
+
+                            }
+
+                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "superadmin"))
+                                  {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Super Admin</a>
+                                        </li>
+
+                                  }
+                           
+
+
+                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "utilisateur"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
+                                </li>
+                            }
+
+                            @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "agent") || await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "superadmin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Agent" asp-action="Index">Agent</a>
+                                </li>
+                            }
+
+                            
+                        }
+                    </ul>
+                    <partial name="_LoginPartial" />
+ 
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <strong class="text-primary text-center">&copy; 2024 - parc_auto_v1 du 15/10/2024 - </strong>
+            
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

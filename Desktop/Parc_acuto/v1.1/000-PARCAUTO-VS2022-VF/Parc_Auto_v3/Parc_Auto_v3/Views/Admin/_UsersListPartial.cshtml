@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Parc_Auto_v3.Models.UserIndexMVW>
+
+<table class="table table-custom">
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>ID</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.CurrentRole</td>
+                <td>
+                    @if (user.CurrentRole != "superadmin")
+                    {
+                        <form asp-action="ChangeRole" method="post">
+                            <input type="hidden" name="userName" value="@user.UserName" />
+                            <select name="newRole" class="form-control role-select" required>
+                                @{
+                                    var roles = new Dictionary<string, string>
+                                    {
+                                        { "", "-- Sélectionnez le Role --" },
+                                        { "admin", "Admin" },
+                                        { "utilisateur", "Utilisateur" },
+                                        { "agent", "Agent" }
+                                    };
+
+                                    foreach (var role in roles)
+                                    {
+                                        var selectedAttribute = user.CurrentRole == role.Key ? "selected" : "";
+                                        @: <option value="@role.Key" @Html.Raw(selectedAttribute)>@role.Value</option>
+                                    }
+                                }
+                            </select>
+                            <button type="submit" class="btn btn-primary btn-custom">
+                                Changer de rôle
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="text-muted">
+                            Impossible de modifier le rôle de super-administrateur
+                        </span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

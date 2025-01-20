@@ -1,0 +1,59 @@
+﻿@model Parc_Auto_v3.Models.Sinistre
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>
+    Supprimer
+</h2>
+
+<h3>
+    Êtes-vous sûr de vouloir supprimer ceci ?
+</h3>
+<div>
+    <h4>Sinistre</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateDommage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateDommage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Observation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Observation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+   
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EtatDeVoiture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EtatDeVoiture)
+        </dd>
+        <dt class="col-sm-2">
+            Prix ​​unitaire
+
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrixFixe)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ceci ?');">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">
+            Retour à la liste
+        </a>
+    </form>
+</div>

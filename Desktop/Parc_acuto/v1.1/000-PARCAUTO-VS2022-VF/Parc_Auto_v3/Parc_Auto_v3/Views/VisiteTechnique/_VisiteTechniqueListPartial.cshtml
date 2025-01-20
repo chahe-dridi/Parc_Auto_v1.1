@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Parc_Auto_v3.Models.VisiteTechnique>
+
+<table class="table table-bordered table-hover table-custom">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().DateEchance)</th>
+            <th>@Html.DisplayNameFor(model => model.First().DateValide)</th>
+       
+            <th>@Html.DisplayNameFor(model => model.First().PrixUnitaire)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Voiture.Matricule)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Voiture.NumeroSerieCarteGrise)</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DateEchance)</td>
+                <td>@Html.DisplayFor(modelItem => item.DateValide)</td>
+              
+                <td>@Html.DisplayFor(modelItem => item.PrixUnitaire)</td>
+                <td>@Html.DisplayFor(modelItem => item.Voiture.Matricule)</td>
+                <td>@Html.DisplayFor(modelItem => item.Voiture.NumeroSerieCarteGrise)</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-custom">modifier</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info btn-custom">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-custom">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

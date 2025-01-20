@@ -1,0 +1,289 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Parc_Auto_v3
+build_property.RootNamespace = Parc_Auto_v3
+build_property.ProjectDir = C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_Auto_v3\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\DARK\Desktop\Parc_acuto\v1.1\000-PARCAUTO-VS2022-VF\Parc_Auto_v3\Parc_Auto_v3
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/Account/Register1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlcjEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Admin/_UsersListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1VzZXJzTGlzdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Agent/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Assurance/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Assurance/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Assurance/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Assurance/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Assurance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Assurance/_AssuranceListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzdXJhbmNlXF9Bc3N1cmFuY2VMaXN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/DemandesAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/DemandesAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/DemandesAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/DemandesAdmin/_DemandesListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNBZG1pblxfRGVtYW5kZXNMaXN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Demandes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Demandes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Demandes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Demandes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Demandes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtYW5kZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Home/hello.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxoZWxsby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Sinistre/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Sinistre/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Sinistre/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Sinistre/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Sinistre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Sinistre/_SinistreListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaXN0cmVcX1NpbmlzdHJlTGlzdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vidange/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vidange/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vidange/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vidange/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vidange/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vidange/_VidangeListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkYW5nZVxfVmlkYW5nZUxpc3RQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vignette/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vignette/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vignette/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vignette/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vignette/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Vignette/_VignetteListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlnbmV0dGVcX1ZpZ25ldHRlTGlzdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/VisiteTechnique/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/VisiteTechnique/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/VisiteTechnique/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/VisiteTechnique/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/VisiteTechnique/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/VisiteTechnique/_VisiteTechniqueListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRlVGVjaG5pcXVlXF9WaXNpdGVUZWNobmlxdWVMaXN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Voiture/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Voiture/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Voiture/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Voiture/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Voiture/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Voiture/_VoitureListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9pdHVyZVxfVm9pdHVyZUxpc3RQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DARK/Desktop/Parc_acuto/v1.1/000-PARCAUTO-VS2022-VF/Parc_Auto_v3/Parc_Auto_v3/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2avmdeygrq

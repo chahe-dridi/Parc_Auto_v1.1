@@ -1,0 +1,79 @@
+﻿@model Parc_Auto_v3.Models.Voiture
+
+@{
+    ViewData["Title"] = "Delete Voiture";
+}
+
+<h1>
+    Supprimer la voiture
+</h1>
+
+<h3>
+    Etes-vous sûr de vouloir supprimer cette Voiture ? tout ce qui concerne la voiture sera également supprimé
+</h3>
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Matricule)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroSerieCarteGrise)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroSerieCarteGrise)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeVoiture)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeVoiture)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Marque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Marque.Nom)
+ 
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Modele)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Modele.Nom)
+ 
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Km)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Km)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carburant)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carburant)
+        </dd>
+    
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Disponibilite)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Disponibilite)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cette Voiture ? tout ce qui concerne la voiture sera également supprimé');">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary"> Retour à la liste</a>
+    </form>
+
+</div>

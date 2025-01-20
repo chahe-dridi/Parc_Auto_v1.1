@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Parc_Auto_v3.Models.Vidange>
+
+<table class="table table-bordered table-hover table-custom">
+    <thead class="thead-dark">
+        <tr>
+            <th>Date Intervention</th>
+            <th>Type Intervention</th>
+            <th>Fournisseur</th>
+            <th>NFacture</th>
+            <th>Kilometrage</th>
+            <th>Operation Details</th>
+            <th>Montant HT</th>
+            <th>Voiture</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DateIntervention.ToString("yyyy-MM-dd")</td>
+                <td>@item.TypeIntervention</td>
+                <td>@item.Fournisseur</td>
+                <td>@item.NFacture</td>
+                <td>@item.Kilometrage</td>
+                <td>@item.OperationDetails</td>
+             
+                <td>@Html.DisplayFor(modelItem => item.MontantHt)</td>
+                <td>@item.Voiture.Matricule</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-custom">modifier</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info btn-custom">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-custom">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

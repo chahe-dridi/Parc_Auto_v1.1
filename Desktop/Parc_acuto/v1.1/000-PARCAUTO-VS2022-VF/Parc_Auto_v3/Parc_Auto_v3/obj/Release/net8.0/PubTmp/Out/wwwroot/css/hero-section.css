@@ -1,0 +1,78 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://www.opengst.fr/wp-content/uploads/2024/08/IMG_OpenGST_hero_Module_Parc-Auto.svg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent dark overlay */
+    border-radius: 10px;
+}
+
+    .overlay-content h1 {
+        font-size: 3em;
+        margin: 20px 0;
+    }
+
+    .overlay-content h3 {
+        font-size: 2em;
+        margin: 10px 0;
+    }
+
+    .overlay-content h4 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+    .feature-list li {
+        margin: 10px 0;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .feature-list li i {
+            margin-right: 10px;
+            color: #FFD700; /* Gold color for check icon */
+        }
+
+.demo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700; /* Gold button background */
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+    .demo-button:hover {
+        background-color: #FFA500; /* Darker gold on hover */
+    }
+
+    .demo-button:active {
+        background-color: #CC8400; /* Even darker gold when clicked */
+    }
