@@ -54,6 +54,8 @@
 
                         @if (SignInManager.IsSignedIn(User))
                         {
+                          
+                            
                             <li class="nav-item">
                                  <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
@@ -76,28 +78,37 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
-                                </li>
+                                @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "superadmin"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Super Admin</a>
+                                    </li>
+
+                                }
 
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="DemandesAdmin" asp-action="Index">administrateur</a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
+                                </li>
+
+                              
+
                              
 
                             }
 
-                            @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "superadmin"))
-                                  {
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Super Admin</a>
-                                        </li>
+                            
 
-                                  }
+                            @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "agent") || await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "superadmin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Agent" asp-action="Index">Agent</a>
+                                </li>
+                            }
                            
-
-
                         /*    @if (await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "utilisateur"))
                             {
                                 <li class="nav-item">
@@ -105,12 +116,7 @@
                                 </li>
                             }
                             */
-                            @if (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "agent") || await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "superadmin"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Agent" asp-action="Index">Agent</a>
-                                </li>
-                            }
+                          
 
                             
                         }
@@ -129,7 +135,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            <strong class="text-primary text-center">&copy; 2024 - parc_auto_v1 du 15/10/2024 - </strong>
+            <strong class="text-primary text-center">&copy; 2024 - parc_auto_v1.1.1 du 15/10/2024 - </strong>
             
         </div>
     </footer>

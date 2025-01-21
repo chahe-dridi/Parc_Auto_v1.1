@@ -271,7 +271,7 @@ namespace Parc_Auto_v3.Controllers
 
         public async Task<IActionResult> DownloadPdf(int id)
         {
-            var demande = await _demandesService.GetDemandeByIdAsync(id);
+            /*var demande = await _demandesService.GetDemandeByIdAsync(id);
             if (demande == null)
             {
                 return NotFound();
@@ -357,55 +357,149 @@ namespace Parc_Auto_v3.Controllers
             var chefDeParcSize = gfx.MeasureString("CHEF DE PARC", fontBold);
             var chefDeParcX = page.Width - 160;
             gfx.DrawLine(XPens.Black, chefDeParcX, yPosition + (details.Length * 40) + 60, chefDeParcX + chefDeParcSize.Width, yPosition + (details.Length * 40) + 60);
+            */
+
+            /* string _MailTo = HelperDonGen.MailTo;; string _MailFrom = HelperDonGen.MailFrom; string _msg = "";
+             string _MailBody = ""; 
+             string _MailServer = HelperDonGen.MailServer; string _MailSubject = "MISSION "; string _MailToRappGlobal = "";
+             //BTDevinSSISService@BT.COM.TN	10.120.2.1	ESSID.SAMI@BT.COM.TN
+             StringBuilder sb = new StringBuilder();
+             _MailBody = "** Vous Trouvez ci-joint Ordre Mission :  " + demande.Prenom + " " + demande.Nom + Environment.NewLine;
+             //"** Nombre Total   :  " + _LogList.Count() + Environment.NewLine;
 
 
-            string _MailTo = HelperDonGen.MailTo;; string _MailFrom = HelperDonGen.MailFrom; string _msg = "";
-            string _MailBody = ""; 
-            string _MailServer = HelperDonGen.MailServer; string _MailSubject = "MISSION "; string _MailToRappGlobal = "";
-            //BTDevinSSISService@BT.COM.TN	10.120.2.1	ESSID.SAMI@BT.COM.TN
-            StringBuilder sb = new StringBuilder();
-            _MailBody = "** Vous Trouvez ci-joint Ordre Mission :  " + demande.Prenom + " " + demande.Nom + Environment.NewLine;
-            //"** Nombre Total   :  " + _LogList.Count() + Environment.NewLine;
+             string _LigneBody = "";
 
 
-            string _LigneBody = "";
+             sb.Append("** Vous Trouvez ci-joint Ordre Mission :  " + demande.Prenom + " " + demande.Nom + Environment.NewLine);
+             sb.Append(Environment.NewLine);
+             sb.Append("</table><br/> Meilleures Salutations  <br/>  Direction Moyens Generaux BT ");
+             //_MailBody += "</table>";
+
+             _MailBody = sb.ToString();
 
 
-            sb.Append("** Vous Trouvez ci-joint Ordre Mission :  " + demande.Prenom + " " + demande.Nom + Environment.NewLine);
-            sb.Append(Environment.NewLine);
-            sb.Append("</table><br/> Meilleures Salutations  <br/>  Direction Moyens Generaux BT ");
-            //_MailBody += "</table>";
-
-            _MailBody = sb.ToString();
-
-           
 
 
+
+            */
+            var demande = await _demandesService.GetDemandeByIdAsync(id);
+            if (demande == null)
+            {
+                return NotFound();
+            }
+
+            var pdf = new PdfDocument();
+            var page = pdf.AddPage();
+            var gfx = XGraphics.FromPdfPage(page);
+            var tf = new XTextFormatter(gfx);
+
+            var fontBold = new XFont("Verdana", 12, XFontStyle.Bold);
+            var fontTitle = new XFont("Verdana", 14, XFontStyle.Bold);
+            var fontContent = new XFont("Verdana", 12, XFontStyle.Regular);
+
+            var photoPath = Path.Combine(_webHostEnvironment.WebRootPath, "images", "Logo_Banque_de_Tunisie.png"); // Adjust the image file name if necessary
+            var photo = XImage.FromFile(photoPath);
+
+            // Set photo position and size
+            var photoWidth = 100; // Adjust as needed
+            var photoHeight = 75; // Adjust as needed
+            var photoX = (page.Width - photoWidth) / 2;
+            var photoY = 60; // Adjust based on the vertical spacing you need
+
+            gfx.DrawImage(photo, photoX, photoY, photoWidth, photoHeight);
+
+            // Top Left Corner
+            gfx.DrawString("Direction des Moyens Généraux", fontBold, XBrushes.Black, new XRect(40, 40, page.Width - 80, 20), XStringFormats.TopLeft);
+
+            // Underline for "Division PARC AUTOS"
+            var divisionText = "Division PARC AUTOS";
+            var divisionSize = gfx.MeasureString(divisionText, fontBold);
+            var divisionX = 40;
+            var divisionY = 60;
+            gfx.DrawString(divisionText, fontBold, XBrushes.Black, new XRect(divisionX, divisionY, page.Width - 80, 20), XStringFormats.TopLeft);
+            gfx.DrawLine(XPens.Black, divisionX, divisionY + 20, divisionX + divisionSize.Width, divisionY + 20);
+
+            // Center the photo between "Division PARC AUTOS" and "ORDRE DE MISSION"
+            var todayDate = DateTime.Now.ToString("dd/MM/yyyy");
+            gfx.DrawString($"Tunis le : {todayDate}", fontBold, XBrushes.Black, new XRect(page.Width - 200, 40, 160, 20), XStringFormats.TopLeft);
+
+            int yPosition = photoY + photoHeight + 60; // Starting y position for details
+            int columnWidth = 200; // Width of each column
+
+            // Middle - Centered Title with Underline
+            var titleText = "ORDRE DE MISSION";
+            var titleSize = gfx.MeasureString(titleText, fontTitle);
+            var titleX = (page.Width - titleSize.Width) / 2; // Center the text horizontally
+            gfx.DrawString(titleText, fontTitle, XBrushes.Black, new XRect(titleX, photoY + photoHeight + 20, titleSize.Width, titleSize.Height), XStringFormats.TopLeft);
+
+            // Underline for "ORDRE DE MISSION"
+            gfx.DrawLine(XPens.Black, titleX, photoY + photoHeight + 40, titleX + titleSize.Width, photoY + photoHeight + 40);
+
+            // Structured Details
+            // Define content labels and values
+            var details = new (string label, string value)[]
+            {
+        ("Objet:", "Autorisation"),
+         
+        ("Destination:", demande.Destination),
+        ("Mission:", demande.Mission),
+        ("Voiture de service:", demande.Voiture?.Matricule ?? "N/A"),
+        ("Date et/Ou Horaire:", $"{demande.DateDepart:dd/MM/yyyy} - {demande.DateArrivee:dd/MM/yyyy}"),
+        ("Utilisateur:", $"{demande.Prenom} {demande.Nom}"),
+        ("Accompagnateur:", demande.Accompagnateur)
+            };
+
+            // Draw each label and value in columns
+            for (int i = 0; i < details.Length; i++)
+            {
+                gfx.DrawString(details[i].label, fontBold, XBrushes.Black, new XRect(40, yPosition, columnWidth, 20), XStringFormats.TopLeft);
+                var rect = new XRect(40 + columnWidth, yPosition, page.Width - 80 - columnWidth, double.MaxValue);
+                tf.DrawString(details[i].value, fontContent, XBrushes.Black, rect, XStringFormats.TopLeft);
+                var textHeight = MeasureTextHeight(gfx, details[i].value, fontContent, page.Width - 80 - columnWidth);
+                yPosition += (int)textHeight + 20; // Adjust yPosition based on text height
+            }
+
+            // Bottom
+            gfx.DrawString("CHEF DE PARC", fontBold, XBrushes.Black, new XRect(page.Width - 160, yPosition + 40, 160, 20), XStringFormats.TopLeft);
+
+            // Underline for "CHEF DE PARC"
+            var chefDeParcSize = gfx.MeasureString("CHEF DE PARC", fontBold);
+            var chefDeParcX = page.Width - 160;
+            gfx.DrawLine(XPens.Black, chefDeParcX, yPosition + 60, chefDeParcX + chefDeParcSize.Width, yPosition + 60);
+
+
+
+            /*   using (var stream = new MemoryStream())
+                                                                                                                            {
+                                                                                                                                pdf.Save(stream, false);
+                                                                                                                                var fileBytes = stream.ToArray();
+                                                                                                                                 Attachment _MailAttachement1 = new Attachment(new MemoryStream(fileBytes), "Mission_" + demande.IdEmploye + "_" + DateTime.Now+ ".pdf");
+
+                                                                                                                               if (MailLibrary.CreateMail(_MailServer, _MailFrom, _MailTo, _MailSubject, _MailBody, _MailAttachement1, ref _msg, true) == false)
+                                                             {
+                                                                                                                                     var ss = "echec"; 
+                                                        }
+
+
+                                                                                                                            return File(fileBytes, "application/pdf", "DemandeDetails.pdf");
+                                                               }*/
 
 
             using (var stream = new MemoryStream())
             {
                 pdf.Save(stream, false);
                 var fileBytes = stream.ToArray();
-                 Attachment _MailAttachement1 = new Attachment(new MemoryStream(fileBytes), "Mission_" + demande.IdEmploye + "_" + DateTime.Now+ ".pdf");
-
- 
-                
-                
-                if (MailLibrary.CreateMail(_MailServer, _MailFrom, _MailTo, _MailSubject, _MailBody, _MailAttachement1, ref _msg, true) == false)
-                {
-                    var ss = "echec"; 
-                }
-
-
-
-
-
-
-
-
                 return File(fileBytes, "application/pdf", "DemandeDetails.pdf");
             }
+
+
+        }
+
+        private double MeasureTextHeight(XGraphics gfx, string text, XFont font, double width)
+        {
+            var size = gfx.MeasureString(text, font);
+            return size.Height;
         }
 
         public static bool fEnvoiMailRembAnticipe(int _journee, string _DISqlConnexion, string _user, ref string _message)
