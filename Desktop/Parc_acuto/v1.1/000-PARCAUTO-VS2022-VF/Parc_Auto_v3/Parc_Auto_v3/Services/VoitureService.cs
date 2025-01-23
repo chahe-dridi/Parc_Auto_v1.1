@@ -31,6 +31,28 @@ namespace Parc_Auto_v3.Services
                                  .FirstOrDefaultAsync(v => v.Id == id);
         }
 
+        //
+
+
+
+
+        public async Task<List<Voiture>> GetAllVoituresAsync1()
+        {
+            return await _context.Voitures
+                                 .Include(v => v.Marque)
+                                 .Include(v => v.Modele)
+                                 .Include(v => v.Demandes) // Include the Demandes collection
+                                 .ToListAsync();
+        }
+
+        public async Task<Voiture> GetVoitureByIdAsync1(int id)
+        {
+            return await _context.Voitures
+                                 .Include(v => v.Marque)
+                                 .Include(v => v.Modele)
+                                 .Include(v => v.Demandes) // Include the Demandes collection
+                                 .FirstOrDefaultAsync(v => v.Id == id);
+        }
 
 
 
@@ -42,13 +64,7 @@ namespace Parc_Auto_v3.Services
 
 
 
-
-
-
-
-
-       
- 
+        //
         public async Task AddVoitureAsync(Voiture voiture)
         {
             _context.Add(voiture);

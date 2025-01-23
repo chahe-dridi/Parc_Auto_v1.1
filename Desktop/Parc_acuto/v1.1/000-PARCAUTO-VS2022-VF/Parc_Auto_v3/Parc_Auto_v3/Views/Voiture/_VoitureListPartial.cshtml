@@ -3,36 +3,30 @@
 <table class="table table-bordered table-hover table-custom">
     <thead class="thead-dark">
         <tr>
-            <th>@Html.DisplayNameFor(model => model.First().Matricule)</th>
-            <th>@Html.DisplayNameFor(model => model.First().NumeroSerieCarteGrise)</th>
-            <th>@Html.DisplayNameFor(model => model.First().TypeVoiture)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Marque)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Modele)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Km)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Carburant)</th>
-
-          
-            <th>@Html.DisplayNameFor(model => model.First().Disponibilite)</th>
+            <th>Matricule</th>
+            <th>Type</th>
+            <th>Carburant</th>
+            <th>Numéro de série</th>
+            <th>Disponibilité</th>
+            <th>Kilométrage</th>
             <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var voiture in Model)
         {
+            var lastKilometrage = voiture.Demandes?.OrderByDescending(d => d.DateDepart).FirstOrDefault()?.Kilometrage;
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.Matricule)</td>
-                <td>@Html.DisplayFor(modelItem => item.NumeroSerieCarteGrise)</td>
-                <td>@Html.DisplayFor(modelItem => item.TypeVoiture)</td>
-                <td>@Html.DisplayFor(modelItem => item.Marque.Nom)</td>
-                <td>@Html.DisplayFor(modelItem => item.Modele.Nom)</td>
-                <td>@Html.DisplayFor(modelItem => item.Km)</td>
-                <td>@Html.DisplayFor(modelItem => item.Carburant)</td>
-              
-                <td>@Html.DisplayFor(modelItem => item.Disponibilite)</td>
+                <td>@voiture.Matricule</td>
+                <td>@voiture.TypeVoiture</td>
+                <td>@voiture.Carburant</td>
+                <td>@voiture.NumeroSerieCarteGrise</td>
+                <td>@voiture.Disponibilite</td>
+                <td>@lastKilometrage</td>
                 <td class="text-center">
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-custom">modifier</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info btn-custom">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-custom">Supprimer</a>
+                    <a asp-action="Edit" asp-route-id="@voiture.Id" class="btn btn-sm btn-warning btn-custom">modifier</a>
+                    <a asp-action="Details" asp-route-id="@voiture.Id" class="btn btn-sm btn-info btn-custom">Details</a>
+                    <a asp-action="Delete" asp-route-id="@voiture.Id" class="btn btn-sm btn-danger btn-custom">Supprimer</a>
                 </td>
             </tr>
         }

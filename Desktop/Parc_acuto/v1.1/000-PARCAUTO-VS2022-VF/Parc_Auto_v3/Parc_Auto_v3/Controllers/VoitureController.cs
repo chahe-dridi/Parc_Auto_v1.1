@@ -8,6 +8,9 @@ using Parc_Auto_v3.Services;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+using System.Collections.Generic;
+
 namespace Parc_Auto_v3.Controllers  
 {
  
@@ -20,23 +23,65 @@ namespace Parc_Auto_v3.Controllers
         private readonly IMarqueService _marqueService;
         private readonly IModeleService _modeleService;
 
-        public VoitureController(IVoitureService voitureService, IMarqueService marqueService, IModeleService modeleService)
+        //
+        private readonly IDemandesService _demandesService;
+
+        public VoitureController(IVoitureService voitureService, IMarqueService marqueService, IModeleService modeleService   , IDemandesService demandesService)
+        
         {
             _voitureService = voitureService;
             _marqueService = marqueService;
             _modeleService = modeleService;
+            //
+            _demandesService = demandesService;
+
         }
 
         // GET: Voiture
-        public async Task<IActionResult> Index()
-        {
-            var voitures = await _voitureService.GetAllVoituresAsync();
-            return View(voitures);
-        } 
+       public async Task<IActionResult> Index()
+          {
+              var voitures = await _voitureService.GetAllVoituresAsync1();
+              return View(voitures);
+          }  
+       
 
-
- 
+        // GET: Voiture/Details/5
         public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var voiture = await _voitureService.GetVoitureByIdAsync1(id.Value);
+            if (voiture == null)
+            {
+                return NotFound();
+            }
+
+            var totalVisiteTechnique = await _voitureService.GetTotalVisiteTechniqueCostAsync(id.Value);
+            var totalVignette = await _voitureService.GetTotalVignetteCostAsync(id.Value);
+            var totalVidange = await _voitureService.GetTotalVidangeCostAsync(id.Value);
+            var totalAssurance = await _voitureService.GetTotalAssuranceCostAsync(id.Value);
+
+            var demandes = await _voitureService.GetDemandesByVoitureIdAsync(id.Value);
+
+            ViewBag.TotalVisiteTechnique = totalVisiteTechnique;
+            ViewBag.TotalVignette = totalVignette;
+            ViewBag.TotalVidange = totalVidange;
+            ViewBag.TotalAssurance = totalAssurance;
+            ViewBag.Demandes = demandes;
+
+            return View(voiture);
+        }
+
+
+
+
+
+
+        //
+      /*  public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -64,7 +109,7 @@ namespace Parc_Auto_v3.Controllers
 
             return View(voiture);
         }
-
+      */
          
 
 

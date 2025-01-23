@@ -8,6 +8,12 @@ namespace Parc_Auto_v3.Services
     {
         Task<List<Voiture>> GetAllVoituresAsync();
         Task<Voiture> GetVoitureByIdAsync(int id);
+
+        Task<List<Voiture>> GetAllVoituresAsync1();
+        Task<Voiture> GetVoitureByIdAsync1(int id);
+
+
+
         Task AddVoitureAsync(Voiture voiture);
         Task UpdateVoitureAsync(Voiture voiture);
         Task DeleteVoitureAsync(int id);
