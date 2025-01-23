@@ -3,64 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\controllers\\vidangecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\controllers\\vidangecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\views\\visitetechnique\\_visitetechniquelistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\views\\visitetechnique\\_visitetechniquelistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\views\\voiture\\_voiturelistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\views\\voiture\\_voiturelistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\controllers\\voiturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\controllers\\voiturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\services\\ivoitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\services\\ivoitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\services\\voitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\services\\voitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\services\\demandesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\services\\demandesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\views\\voiture\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\views\\voiture\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\services\\assuranceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\services\\assuranceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\services\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\services\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\models\\voiture .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\models\\voiture .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\controllers\\demandesadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\controllers\\demandesadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\models\\demandes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\models\\demandes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\models\\modele.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\models\\modele.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|c:\\users\\dark\\desktop\\parc_acuto\\v1.1\\000-parcauto-vs2022-vf\\parc_auto_v3\\parc_auto_v3\\views\\vidange\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3250075-C430-4DE0-BB90-5DD9B4A99626}|Parc_Auto_v3\\Parc_Auto_v3.csproj|solutionrelative:parc_auto_v3\\views\\vidange\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,184 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VoitureService.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\VoitureService.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Services\\VoitureService.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\VoitureService.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Services\\VoitureService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:46:17.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DemandesService.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\DemandesService.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Services\\DemandesService.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\DemandesService.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Services\\DemandesService.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:28:55.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IVoitureService.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\IVoitureService.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Services\\IVoitureService.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\IVoitureService.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Services\\IVoitureService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:28:45.607Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AssuranceService.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\AssuranceService.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Services\\AssuranceService.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\AssuranceService.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Services\\AssuranceService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwDEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:27:20.042Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Services\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Services\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Services\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:27:19.408Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:27:10.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Voiture .cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Models\\Voiture .cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Models\\Voiture .cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Models\\Voiture .cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Models\\Voiture .cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:26:55.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DemandesAdminController.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\DemandesAdminController.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Controllers\\DemandesAdminController.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\DemandesAdminController.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Controllers\\DemandesAdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:25:33.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Demandes.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Models\\Demandes.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Models\\Demandes.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Models\\Demandes.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Models\\Demandes.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAcwEUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:24:35.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Modele.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Models\\Modele.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Models\\Modele.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Models\\Modele.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Models\\Modele.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:24:18.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Voiture\\Index.cshtml",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Views\\Voiture\\Index.cshtml",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Voiture\\Index.cshtml",
-              "RelativeToolTip": "Parc_Auto_v3\\Views\\Voiture\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T18:20:31.944Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VoitureController.cs",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\VoitureController.cs",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Controllers\\VoitureController.cs",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\VoitureController.cs",
-              "RelativeToolTip": "Parc_Auto_v3\\Controllers\\VoitureController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwDcAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T18:20:16.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_VoitureListPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Voiture\\_VoitureListPartial.cshtml",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Views\\Voiture\\_VoitureListPartial.cshtml",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Voiture\\_VoitureListPartial.cshtml",
-              "RelativeToolTip": "Parc_Auto_v3\\Views\\Voiture\\_VoitureListPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T18:20:12.462Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Parc_Auto_v3\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T18:19:10.076Z",
+              "Title": "VidangeController.cs",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\VidangeController.cs",
+              "RelativeDocumentMoniker": "Parc_Auto_v3\\Controllers\\VidangeController.cs",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Controllers\\VidangeController.cs",
+              "RelativeToolTip": "Parc_Auto_v3\\Controllers\\VidangeController.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAuwHYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T19:42:51.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_VisiteTechniqueListPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\VisiteTechnique\\_VisiteTechniqueListPartial.cshtml",
-              "RelativeDocumentMoniker": "Parc_Auto_v3\\Views\\VisiteTechnique\\_VisiteTechniqueListPartial.cshtml",
-              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\VisiteTechnique\\_VisiteTechniqueListPartial.cshtml",
-              "RelativeToolTip": "Parc_Auto_v3\\Views\\VisiteTechnique\\_VisiteTechniqueListPartial.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwAoAAABMAAAAAAAAAA==",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Vidange\\Create.cshtml",
+              "RelativeDocumentMoniker": "Parc_Auto_v3\\Views\\Vidange\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DARK\\Desktop\\Parc_acuto\\v1.1\\000-PARCAUTO-VS2022-VF\\Parc_Auto_v3\\Parc_Auto_v3\\Views\\Vidange\\Create.cshtml",
+              "RelativeToolTip": "Parc_Auto_v3\\Views\\Vidange\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T18:19:00.397Z",
+              "WhenOpened": "2025-01-23T19:42:46.492Z",
               "EditorCaption": ""
             }
           ]

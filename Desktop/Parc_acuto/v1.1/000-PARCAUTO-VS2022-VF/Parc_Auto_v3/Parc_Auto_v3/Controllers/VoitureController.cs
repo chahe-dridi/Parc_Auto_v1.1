@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 
 using System.Collections.Generic;
+using OfficeOpenXml.Style;
+using OfficeOpenXml;
 
 namespace Parc_Auto_v3.Controllers  
 {
@@ -368,6 +370,68 @@ namespace Parc_Auto_v3.Controllers
 
 
 
-   
+
+
+
+        public async Task<IActionResult> DownloadExcel()
+        {
+            var voitures = await _voitureService.GetAllVoituresAsync1();
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Voitures Report");
+
+                // Set headers
+                var headers = new[]
+                {
+                    "Matricule", "Type Voiture", "Marque", "Modele", "Carburant", "Numero Serie Carte Grise", "Disponibilite", "Kilométrage"
+                };
+
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    worksheet.Cells[1, i + 1].Value = headers[i];
+                    worksheet.Cells[1, i + 1].Style.Font.Bold = true;
+                    worksheet.Cells[1, i + 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    worksheet.Cells[1, i + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
+                    worksheet.Cells[1, i + 1].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[1, i + 1].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[1, i + 1].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[1, i + 1].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                }
+
+                // Populate data
+                for (int row = 0; row < voitures.Count; row++)
+                {
+                    var voiture = voitures[row];
+                    var lastKilometrage = voiture.Demandes?.OrderByDescending(d => d.DateDepart).FirstOrDefault()?.Kilometrage;
+
+                    worksheet.Cells[row + 2, 1].Value = voiture.Matricule;
+                    worksheet.Cells[row + 2, 2].Value = voiture.TypeVoiture;
+                    worksheet.Cells[row + 2, 3].Value = voiture.Marque.Nom;
+                    worksheet.Cells[row + 2, 4].Value = voiture.Modele.Nom;
+                    worksheet.Cells[row + 2, 5].Value = voiture.Carburant;
+                    worksheet.Cells[row + 2, 6].Value = voiture.NumeroSerieCarteGrise;
+                    worksheet.Cells[row + 2, 7].Value = voiture.Disponibilite;
+                    worksheet.Cells[row + 2, 8].Value = lastKilometrage;
+                }
+
+                using (var stream = new MemoryStream())
+                {
+                    package.SaveAs(stream);
+                    var fileBytes = stream.ToArray();
+                    return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Voitures.xlsx");
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
