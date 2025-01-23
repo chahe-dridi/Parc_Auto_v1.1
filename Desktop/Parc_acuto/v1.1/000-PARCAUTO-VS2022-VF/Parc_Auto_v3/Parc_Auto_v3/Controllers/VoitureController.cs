@@ -32,7 +32,7 @@ namespace Parc_Auto_v3.Controllers
         {
             var voitures = await _voitureService.GetAllVoituresAsync();
             return View(voitures);
-        }
+        } 
 
 
  

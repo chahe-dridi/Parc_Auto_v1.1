@@ -441,7 +441,6 @@ namespace Parc_Auto_v3.Controllers
             var details = new (string label, string value)[]
             {
         ("Objet:", "Autorisation"),
-         
         ("Destination:", demande.Destination),
         ("Mission:", demande.Mission),
         ("Voiture de service:", demande.Voiture?.Matricule ?? "N/A"),
@@ -457,7 +456,7 @@ namespace Parc_Auto_v3.Controllers
                 var rect = new XRect(40 + columnWidth, yPosition, page.Width - 80 - columnWidth, double.MaxValue);
                 tf.DrawString(details[i].value, fontContent, XBrushes.Black, rect, XStringFormats.TopLeft);
                 var textHeight = MeasureTextHeight(gfx, details[i].value, fontContent, page.Width - 80 - columnWidth);
-                yPosition += (int)textHeight + 20; // Adjust yPosition based on text height
+                yPosition += (int)textHeight + 40; // Adjust yPosition based on text height and add padding
             }
 
             // Bottom
@@ -467,7 +466,6 @@ namespace Parc_Auto_v3.Controllers
             var chefDeParcSize = gfx.MeasureString("CHEF DE PARC", fontBold);
             var chefDeParcX = page.Width - 160;
             gfx.DrawLine(XPens.Black, chefDeParcX, yPosition + 60, chefDeParcX + chefDeParcSize.Width, yPosition + 60);
-
 
 
             /*   using (var stream = new MemoryStream())
@@ -616,6 +614,83 @@ namespace Parc_Auto_v3.Controllers
 
 
 
+        /* public async Task<IActionResult> DownloadExcel(string searchString, string searchMatricule)
+         {
+             var demandes = await _demandesService.GetAllDemandesAsync();
+
+             if (!string.IsNullOrEmpty(searchString))
+             {
+                 demandes = demandes.Where(d => d.IdEmploye.Contains(searchString)).ToList();
+             }
+
+             if (!string.IsNullOrEmpty(searchMatricule))
+             {
+                 demandes = demandes.Where(d => d.Voiture != null && d.Voiture.Matricule.Contains(searchMatricule)).ToList();
+             }
+
+             using (var package = new ExcelPackage())
+             {
+                 var worksheet = package.Workbook.Worksheets.Add("Demandes Report");
+
+                 // Set headers
+                 var headers = new[]
+                 {
+             "Nom & Prenom", "Id Employe", "Affectation Departement", "Type Voiture",
+             "Destination", "Dates", "Description", "Mission", "Etat", "Matricule","Kilometrage"
+         };
+
+                 for (int i = 0; i < headers.Length; i++)
+                 {
+                     worksheet.Cells[1, i + 1].Value = headers[i];
+                     worksheet.Cells[1, i + 1].Style.Font.Bold = true;
+                     worksheet.Cells[1, i + 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                     worksheet.Cells[1, i + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
+                     worksheet.Cells[1, i + 1].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                     worksheet.Cells[1, i + 1].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                     worksheet.Cells[1, i + 1].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                     worksheet.Cells[1, i + 1].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                 }
+
+                 // Populate data
+                 for (int row = 0; row < demandes.Count; row++)
+                 {
+                     var demande = demandes[row];
+                     worksheet.Cells[row + 2, 1].Value = $"{demande.Nom} {demande.Prenom}";
+                     worksheet.Cells[row + 2, 2].Value = demande.IdEmploye;
+                     worksheet.Cells[row + 2, 3].Value = demande.AffectationDepartement;
+                     worksheet.Cells[row + 2, 4].Value = demande.TypeVoiture;
+                     worksheet.Cells[row + 2, 5].Value = demande.Destination;
+                     worksheet.Cells[row + 2, 6].Value = $"{demande.DateDepart.ToShortDateString()} - {demande.DateArrivee.ToShortDateString()}";
+                     worksheet.Cells[row + 2, 7].Value = demande.Description;
+                     worksheet.Cells[row + 2, 8].Value = demande.Mission;
+
+                     worksheet.Cells[row + 2, 9].Value = demande.Etat;
+
+                     if(demande.Etat == "Refused")
+                     {
+                         worksheet.Cells[row + 2, 10].Value = "Refuse";
+                     }
+                     else if (demande.Etat == "En attente")
+                     {
+                         worksheet.Cells[row + 2, 10].Value = "En attente";
+
+                     }
+                     else
+                     {
+                         worksheet.Cells[row + 2, 10].Value = demande.Voiture.Matricule;
+                     }
+                     worksheet.Cells[row + 2, 11].Value = demande.Kilometrage;
+                 }
+
+                 using (var stream = new MemoryStream())
+                 {
+                     package.SaveAs(stream); 
+                     var fileBytes = stream.ToArray();
+                     return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Demandes.xlsx");
+                 }
+             }
+         }*/
+
         public async Task<IActionResult> DownloadExcel(string searchString, string searchMatricule)
         {
             var demandes = await _demandesService.GetAllDemandesAsync();
@@ -638,7 +713,7 @@ namespace Parc_Auto_v3.Controllers
                 var headers = new[]
                 {
             "Nom & Prenom", "Id Employe", "Affectation Departement", "Type Voiture",
-            "Destination", "Dates", "Description", "Mission", "Etat", "Matricule","Kilometrage"
+            "Destination", "Date Depart", "Date Arrivee", "Description", "Mission", "Etat", "Matricule", "Kilometrage"
         };
 
                 for (int i = 0; i < headers.Length; i++)
@@ -662,31 +737,30 @@ namespace Parc_Auto_v3.Controllers
                     worksheet.Cells[row + 2, 3].Value = demande.AffectationDepartement;
                     worksheet.Cells[row + 2, 4].Value = demande.TypeVoiture;
                     worksheet.Cells[row + 2, 5].Value = demande.Destination;
-                    worksheet.Cells[row + 2, 6].Value = $"{demande.DateDepart.ToShortDateString()} - {demande.DateArrivee.ToShortDateString()}";
-                    worksheet.Cells[row + 2, 7].Value = demande.Description;
-                    worksheet.Cells[row + 2, 8].Value = demande.Mission;
-             
-                    worksheet.Cells[row + 2, 9].Value = demande.Etat;
+                    worksheet.Cells[row + 2, 6].Value = demande.DateDepart.ToShortDateString();
+                    worksheet.Cells[row + 2, 7].Value = demande.DateArrivee.ToShortDateString();
+                    worksheet.Cells[row + 2, 8].Value = demande.Description;
+                    worksheet.Cells[row + 2, 9].Value = demande.Mission;
+                    worksheet.Cells[row + 2, 10].Value = demande.Etat;
 
-                    if(demande.Etat == "Refused")
+                    if (demande.Etat == "Refused")
                     {
-                        worksheet.Cells[row + 2, 10].Value = "Refuse";
+                        worksheet.Cells[row + 2, 11].Value = "Refuse";
                     }
                     else if (demande.Etat == "En attente")
                     {
-                        worksheet.Cells[row + 2, 10].Value = "En attente";
-
+                        worksheet.Cells[row + 2, 11].Value = "En attente";
                     }
                     else
                     {
-                        worksheet.Cells[row + 2, 10].Value = demande.Voiture.Matricule;
+                        worksheet.Cells[row + 2, 11].Value = demande.Voiture.Matricule;
                     }
-                    worksheet.Cells[row + 2, 11].Value = demande.Kilometrage;
+                    worksheet.Cells[row + 2, 12].Value = demande.Kilometrage;
                 }
 
                 using (var stream = new MemoryStream())
                 {
-                    package.SaveAs(stream); 
+                    package.SaveAs(stream);
                     var fileBytes = stream.ToArray();
                     return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Demandes.xlsx");
                 }
@@ -697,7 +771,5 @@ namespace Parc_Auto_v3.Controllers
 
 
 
-
- 
     }
 }
