@@ -1,11 +1,14 @@
 ﻿@model IEnumerable<Parc_Auto_v3.Models.VisiteTechnique>
 
+@{
+    var sortedModel = Model.OrderBy(item => item.DateEchance <= DateTime.Now.AddMonths(1) ? 0 : 1).ThenBy(item => item.DateEchance);
+}
+
 <table class="table table-bordered table-hover table-custom">
     <thead class="thead-dark">
         <tr>
             <th>@Html.DisplayNameFor(model => model.First().DateEchance)</th>
             <th>@Html.DisplayNameFor(model => model.First().DateValide)</th>
-       
             <th>@Html.DisplayNameFor(model => model.First().PrixUnitaire)</th>
             <th>@Html.DisplayNameFor(model => model.First().Voiture.Matricule)</th>
             <th>@Html.DisplayNameFor(model => model.First().Voiture.NumeroSerieCarteGrise)</th>
@@ -13,12 +16,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in sortedModel)
         {
-            <tr>
+            var isNearExpiry = item.DateEchance <= DateTime.Now.AddMonths(1);
+            <tr class="@(isNearExpiry ? "table-danger" : "")">
                 <td>@Html.DisplayFor(modelItem => item.DateEchance)</td>
                 <td>@Html.DisplayFor(modelItem => item.DateValide)</td>
-              
                 <td>@Html.DisplayFor(modelItem => item.PrixUnitaire)</td>
                 <td>@Html.DisplayFor(modelItem => item.Voiture.Matricule)</td>
                 <td>@Html.DisplayFor(modelItem => item.Voiture.NumeroSerieCarteGrise)</td>
